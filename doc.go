@@ -42,4 +42,4 @@
 //nin = nil is nil (nullable = true) [typical]
 //vis = value is set
 //vim = value is missing
-package test
+package gogoprototest

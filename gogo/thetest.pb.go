@@ -2,7 +2,7 @@
 // source: thetest.proto
 // DO NOT EDIT!
 
-package test
+package gogoprototest
 
 import proto "code.google.com/p/gogoprotobuf/proto"
 import json "encoding/json"

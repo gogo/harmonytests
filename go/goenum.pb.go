@@ -2,7 +2,7 @@
 // source: goenum.proto
 // DO NOT EDIT!
 
-package test
+package gogoprototest
 
 import proto "code.google.com/p/goprotobuf/proto"
 import json "encoding/json"
@@ -55,7 +55,7 @@ func (x *TheTestEnum) UnmarshalJSON(data []byte) error {
 }
 
 type NidOptEnum struct {
-	Field1           *TheTestEnum `protobuf:"varint,1,opt,enum=test.TheTestEnum" json:"Field1,omitempty"`
+	Field1           *TheTestEnum `protobuf:"varint,1,opt,enum=gogoprototest.TheTestEnum" json:"Field1,omitempty"`
 	XXX_unrecognized []byte       `json:"-"`
 }
 
@@ -71,7 +71,7 @@ func (m *NidOptEnum) GetField1() TheTestEnum {
 }
 
 type NinOptEnum struct {
-	Field1           *TheTestEnum `protobuf:"varint,1,opt,enum=test.TheTestEnum" json:"Field1,omitempty"`
+	Field1           *TheTestEnum `protobuf:"varint,1,opt,enum=gogoprototest.TheTestEnum" json:"Field1,omitempty"`
 	XXX_unrecognized []byte       `json:"-"`
 }
 
@@ -87,7 +87,7 @@ func (m *NinOptEnum) GetField1() TheTestEnum {
 }
 
 type NidRepEnum struct {
-	Field1           []TheTestEnum `protobuf:"varint,1,rep,enum=test.TheTestEnum" json:"Field1,omitempty"`
+	Field1           []TheTestEnum `protobuf:"varint,1,rep,enum=gogoprototest.TheTestEnum" json:"Field1,omitempty"`
 	XXX_unrecognized []byte        `json:"-"`
 }
 
@@ -103,7 +103,7 @@ func (m *NidRepEnum) GetField1() []TheTestEnum {
 }
 
 type NinRepEnum struct {
-	Field1           []TheTestEnum `protobuf:"varint,1,rep,enum=test.TheTestEnum" json:"Field1,omitempty"`
+	Field1           []TheTestEnum `protobuf:"varint,1,rep,enum=gogoprototest.TheTestEnum" json:"Field1,omitempty"`
 	XXX_unrecognized []byte        `json:"-"`
 }
 
@@ -119,5 +119,5 @@ func (m *NinRepEnum) GetField1() []TheTestEnum {
 }
 
 func init() {
-	proto.RegisterEnum("test.TheTestEnum", TheTestEnum_name, TheTestEnum_value)
+	proto.RegisterEnum("gogoprototest.TheTestEnum", TheTestEnum_name, TheTestEnum_value)
 }
