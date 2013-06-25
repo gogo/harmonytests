@@ -12,6 +12,10 @@ import math "math"
 
 import code_google_com_p_gogoprotobuf_test_custom "code.google.com/p/gogoprotobuf/test/custom"
 
+import fmt "fmt"
+import strings "strings"
+import reflect "reflect"
+
 // Reference proto, json, and math imports to suppress error if they are not otherwise used.
 var _ = proto.Marshal
 var _ = &json.SyntaxError{}
@@ -24,16 +28,8 @@ type SimpleMessage struct {
 	XXX_unrecognized []byte                                          `json:"-"`
 }
 
-func (m *SimpleMessage) Reset()         { *m = SimpleMessage{} }
-func (m *SimpleMessage) String() string { return proto.CompactTextString(m) }
-func (*SimpleMessage) ProtoMessage()    {}
-
-func (m *SimpleMessage) GetTime() int64 {
-	if m != nil && m.Time != nil {
-		return *m.Time
-	}
-	return 0
-}
+func (m *SimpleMessage) Reset()      { *m = SimpleMessage{} }
+func (*SimpleMessage) ProtoMessage() {}
 
 type NidOptNative struct {
 	Field1           float64 `protobuf:"fixed64,1,opt" json:"Field1"`
@@ -54,9 +50,8 @@ type NidOptNative struct {
 	XXX_unrecognized []byte  `json:"-"`
 }
 
-func (m *NidOptNative) Reset()         { *m = NidOptNative{} }
-func (m *NidOptNative) String() string { return proto.CompactTextString(m) }
-func (*NidOptNative) ProtoMessage()    {}
+func (m *NidOptNative) Reset()      { *m = NidOptNative{} }
+func (*NidOptNative) ProtoMessage() {}
 
 type NinOptNative struct {
 	Field1           *float64 `protobuf:"fixed64,1,opt" json:"Field1,omitempty"`
@@ -77,114 +72,8 @@ type NinOptNative struct {
 	XXX_unrecognized []byte   `json:"-"`
 }
 
-func (m *NinOptNative) Reset()         { *m = NinOptNative{} }
-func (m *NinOptNative) String() string { return proto.CompactTextString(m) }
-func (*NinOptNative) ProtoMessage()    {}
-
-func (m *NinOptNative) GetField1() float64 {
-	if m != nil && m.Field1 != nil {
-		return *m.Field1
-	}
-	return 0
-}
-
-func (m *NinOptNative) GetField2() float32 {
-	if m != nil && m.Field2 != nil {
-		return *m.Field2
-	}
-	return 0
-}
-
-func (m *NinOptNative) GetField3() int32 {
-	if m != nil && m.Field3 != nil {
-		return *m.Field3
-	}
-	return 0
-}
-
-func (m *NinOptNative) GetField4() int64 {
-	if m != nil && m.Field4 != nil {
-		return *m.Field4
-	}
-	return 0
-}
-
-func (m *NinOptNative) GetField5() uint32 {
-	if m != nil && m.Field5 != nil {
-		return *m.Field5
-	}
-	return 0
-}
-
-func (m *NinOptNative) GetField6() uint64 {
-	if m != nil && m.Field6 != nil {
-		return *m.Field6
-	}
-	return 0
-}
-
-func (m *NinOptNative) GetField7() int32 {
-	if m != nil && m.Field7 != nil {
-		return *m.Field7
-	}
-	return 0
-}
-
-func (m *NinOptNative) GetField8() int64 {
-	if m != nil && m.Field8 != nil {
-		return *m.Field8
-	}
-	return 0
-}
-
-func (m *NinOptNative) GetField9() uint32 {
-	if m != nil && m.Field9 != nil {
-		return *m.Field9
-	}
-	return 0
-}
-
-func (m *NinOptNative) GetField10() int32 {
-	if m != nil && m.Field10 != nil {
-		return *m.Field10
-	}
-	return 0
-}
-
-func (m *NinOptNative) GetField11() uint64 {
-	if m != nil && m.Field11 != nil {
-		return *m.Field11
-	}
-	return 0
-}
-
-func (m *NinOptNative) GetField12() int64 {
-	if m != nil && m.Field12 != nil {
-		return *m.Field12
-	}
-	return 0
-}
-
-func (m *NinOptNative) GetField13() bool {
-	if m != nil && m.Field13 != nil {
-		return *m.Field13
-	}
-	return false
-}
-
-func (m *NinOptNative) GetField14() string {
-	if m != nil && m.Field14 != nil {
-		return *m.Field14
-	}
-	return ""
-}
-
-func (m *NinOptNative) GetField15() []byte {
-	if m != nil {
-		return m.Field15
-	}
-	return nil
-}
+func (m *NinOptNative) Reset()      { *m = NinOptNative{} }
+func (*NinOptNative) ProtoMessage() {}
 
 type NidRepNative struct {
 	Field1           []float64 `protobuf:"fixed64,1,rep" json:"Field1"`
@@ -205,9 +94,8 @@ type NidRepNative struct {
 	XXX_unrecognized []byte    `json:"-"`
 }
 
-func (m *NidRepNative) Reset()         { *m = NidRepNative{} }
-func (m *NidRepNative) String() string { return proto.CompactTextString(m) }
-func (*NidRepNative) ProtoMessage()    {}
+func (m *NidRepNative) Reset()      { *m = NidRepNative{} }
+func (*NidRepNative) ProtoMessage() {}
 
 type NinRepNative struct {
 	Field1           []float64 `protobuf:"fixed64,1,rep" json:"Field1,omitempty"`
@@ -228,114 +116,8 @@ type NinRepNative struct {
 	XXX_unrecognized []byte    `json:"-"`
 }
 
-func (m *NinRepNative) Reset()         { *m = NinRepNative{} }
-func (m *NinRepNative) String() string { return proto.CompactTextString(m) }
-func (*NinRepNative) ProtoMessage()    {}
-
-func (m *NinRepNative) GetField1() []float64 {
-	if m != nil {
-		return m.Field1
-	}
-	return nil
-}
-
-func (m *NinRepNative) GetField2() []float32 {
-	if m != nil {
-		return m.Field2
-	}
-	return nil
-}
-
-func (m *NinRepNative) GetField3() []int32 {
-	if m != nil {
-		return m.Field3
-	}
-	return nil
-}
-
-func (m *NinRepNative) GetField4() []int64 {
-	if m != nil {
-		return m.Field4
-	}
-	return nil
-}
-
-func (m *NinRepNative) GetField5() []uint32 {
-	if m != nil {
-		return m.Field5
-	}
-	return nil
-}
-
-func (m *NinRepNative) GetField6() []uint64 {
-	if m != nil {
-		return m.Field6
-	}
-	return nil
-}
-
-func (m *NinRepNative) GetField7() []int32 {
-	if m != nil {
-		return m.Field7
-	}
-	return nil
-}
-
-func (m *NinRepNative) GetField8() []int64 {
-	if m != nil {
-		return m.Field8
-	}
-	return nil
-}
-
-func (m *NinRepNative) GetField9() []uint32 {
-	if m != nil {
-		return m.Field9
-	}
-	return nil
-}
-
-func (m *NinRepNative) GetField10() []int32 {
-	if m != nil {
-		return m.Field10
-	}
-	return nil
-}
-
-func (m *NinRepNative) GetField11() []uint64 {
-	if m != nil {
-		return m.Field11
-	}
-	return nil
-}
-
-func (m *NinRepNative) GetField12() []int64 {
-	if m != nil {
-		return m.Field12
-	}
-	return nil
-}
-
-func (m *NinRepNative) GetField13() []bool {
-	if m != nil {
-		return m.Field13
-	}
-	return nil
-}
-
-func (m *NinRepNative) GetField14() []string {
-	if m != nil {
-		return m.Field14
-	}
-	return nil
-}
-
-func (m *NinRepNative) GetField15() [][]byte {
-	if m != nil {
-		return m.Field15
-	}
-	return nil
-}
+func (m *NinRepNative) Reset()      { *m = NinRepNative{} }
+func (*NinRepNative) ProtoMessage() {}
 
 type NidRepPackedNative struct {
 	Field3           []int32 `protobuf:"varint,3,rep,packed" json:"Field3"`
@@ -344,9 +126,8 @@ type NidRepPackedNative struct {
 	XXX_unrecognized []byte  `json:"-"`
 }
 
-func (m *NidRepPackedNative) Reset()         { *m = NidRepPackedNative{} }
-func (m *NidRepPackedNative) String() string { return proto.CompactTextString(m) }
-func (*NidRepPackedNative) ProtoMessage()    {}
+func (m *NidRepPackedNative) Reset()      { *m = NidRepPackedNative{} }
+func (*NidRepPackedNative) ProtoMessage() {}
 
 type NinRepPackedNative struct {
 	Field3           []int32 `protobuf:"varint,3,rep" json:"Field3,omitempty"`
@@ -355,30 +136,8 @@ type NinRepPackedNative struct {
 	XXX_unrecognized []byte  `json:"-"`
 }
 
-func (m *NinRepPackedNative) Reset()         { *m = NinRepPackedNative{} }
-func (m *NinRepPackedNative) String() string { return proto.CompactTextString(m) }
-func (*NinRepPackedNative) ProtoMessage()    {}
-
-func (m *NinRepPackedNative) GetField3() []int32 {
-	if m != nil {
-		return m.Field3
-	}
-	return nil
-}
-
-func (m *NinRepPackedNative) GetField4() []int64 {
-	if m != nil {
-		return m.Field4
-	}
-	return nil
-}
-
-func (m *NinRepPackedNative) GetField13() []bool {
-	if m != nil {
-		return m.Field13
-	}
-	return nil
-}
+func (m *NinRepPackedNative) Reset()      { *m = NinRepPackedNative{} }
+func (*NinRepPackedNative) ProtoMessage() {}
 
 type NidOptStruct struct {
 	Field1           float64      `protobuf:"fixed64,1,opt" json:"Field1"`
@@ -394,9 +153,8 @@ type NidOptStruct struct {
 	XXX_unrecognized []byte       `json:"-"`
 }
 
-func (m *NidOptStruct) Reset()         { *m = NidOptStruct{} }
-func (m *NidOptStruct) String() string { return proto.CompactTextString(m) }
-func (*NidOptStruct) ProtoMessage()    {}
+func (m *NidOptStruct) Reset()      { *m = NidOptStruct{} }
+func (*NidOptStruct) ProtoMessage() {}
 
 type NinOptStruct struct {
 	Field1           *float64      `protobuf:"fixed64,1,opt" json:"Field1,omitempty"`
@@ -412,79 +170,8 @@ type NinOptStruct struct {
 	XXX_unrecognized []byte        `json:"-"`
 }
 
-func (m *NinOptStruct) Reset()         { *m = NinOptStruct{} }
-func (m *NinOptStruct) String() string { return proto.CompactTextString(m) }
-func (*NinOptStruct) ProtoMessage()    {}
-
-func (m *NinOptStruct) GetField1() float64 {
-	if m != nil && m.Field1 != nil {
-		return *m.Field1
-	}
-	return 0
-}
-
-func (m *NinOptStruct) GetField2() float32 {
-	if m != nil && m.Field2 != nil {
-		return *m.Field2
-	}
-	return 0
-}
-
-func (m *NinOptStruct) GetField3() *NidOptNative {
-	if m != nil {
-		return m.Field3
-	}
-	return nil
-}
-
-func (m *NinOptStruct) GetField4() *NinOptNative {
-	if m != nil {
-		return m.Field4
-	}
-	return nil
-}
-
-func (m *NinOptStruct) GetField6() uint64 {
-	if m != nil && m.Field6 != nil {
-		return *m.Field6
-	}
-	return 0
-}
-
-func (m *NinOptStruct) GetField7() int32 {
-	if m != nil && m.Field7 != nil {
-		return *m.Field7
-	}
-	return 0
-}
-
-func (m *NinOptStruct) GetField8() *NidOptNative {
-	if m != nil {
-		return m.Field8
-	}
-	return nil
-}
-
-func (m *NinOptStruct) GetField13() bool {
-	if m != nil && m.Field13 != nil {
-		return *m.Field13
-	}
-	return false
-}
-
-func (m *NinOptStruct) GetField14() string {
-	if m != nil && m.Field14 != nil {
-		return *m.Field14
-	}
-	return ""
-}
-
-func (m *NinOptStruct) GetField15() []byte {
-	if m != nil {
-		return m.Field15
-	}
-	return nil
-}
+func (m *NinOptStruct) Reset()      { *m = NinOptStruct{} }
+func (*NinOptStruct) ProtoMessage() {}
 
 type NidRepStruct struct {
 	Field1           []float64      `protobuf:"fixed64,1,rep" json:"Field1"`
@@ -500,9 +187,8 @@ type NidRepStruct struct {
 	XXX_unrecognized []byte         `json:"-"`
 }
 
-func (m *NidRepStruct) Reset()         { *m = NidRepStruct{} }
-func (m *NidRepStruct) String() string { return proto.CompactTextString(m) }
-func (*NidRepStruct) ProtoMessage()    {}
+func (m *NidRepStruct) Reset()      { *m = NidRepStruct{} }
+func (*NidRepStruct) ProtoMessage() {}
 
 type NinRepStruct struct {
 	Field1           []float64       `protobuf:"fixed64,1,rep" json:"Field1,omitempty"`
@@ -518,79 +204,8 @@ type NinRepStruct struct {
 	XXX_unrecognized []byte          `json:"-"`
 }
 
-func (m *NinRepStruct) Reset()         { *m = NinRepStruct{} }
-func (m *NinRepStruct) String() string { return proto.CompactTextString(m) }
-func (*NinRepStruct) ProtoMessage()    {}
-
-func (m *NinRepStruct) GetField1() []float64 {
-	if m != nil {
-		return m.Field1
-	}
-	return nil
-}
-
-func (m *NinRepStruct) GetField2() []float32 {
-	if m != nil {
-		return m.Field2
-	}
-	return nil
-}
-
-func (m *NinRepStruct) GetField3() []*NidOptNative {
-	if m != nil {
-		return m.Field3
-	}
-	return nil
-}
-
-func (m *NinRepStruct) GetField4() []*NinOptNative {
-	if m != nil {
-		return m.Field4
-	}
-	return nil
-}
-
-func (m *NinRepStruct) GetField6() []uint64 {
-	if m != nil {
-		return m.Field6
-	}
-	return nil
-}
-
-func (m *NinRepStruct) GetField7() []int32 {
-	if m != nil {
-		return m.Field7
-	}
-	return nil
-}
-
-func (m *NinRepStruct) GetField8() []*NidOptNative {
-	if m != nil {
-		return m.Field8
-	}
-	return nil
-}
-
-func (m *NinRepStruct) GetField13() []bool {
-	if m != nil {
-		return m.Field13
-	}
-	return nil
-}
-
-func (m *NinRepStruct) GetField14() []string {
-	if m != nil {
-		return m.Field14
-	}
-	return nil
-}
-
-func (m *NinRepStruct) GetField15() [][]byte {
-	if m != nil {
-		return m.Field15
-	}
-	return nil
-}
+func (m *NinRepStruct) Reset()      { *m = NinRepStruct{} }
+func (*NinRepStruct) ProtoMessage() {}
 
 type NidEmbeddedStruct struct {
 	NidOptNative     `protobuf:"bytes,1,opt,embedded=Field1" json:"Field1"`
@@ -599,9 +214,8 @@ type NidEmbeddedStruct struct {
 	XXX_unrecognized []byte       `json:"-"`
 }
 
-func (m *NidEmbeddedStruct) Reset()         { *m = NidEmbeddedStruct{} }
-func (m *NidEmbeddedStruct) String() string { return proto.CompactTextString(m) }
-func (*NidEmbeddedStruct) ProtoMessage()    {}
+func (m *NidEmbeddedStruct) Reset()      { *m = NidEmbeddedStruct{} }
+func (*NidEmbeddedStruct) ProtoMessage() {}
 
 type NinEmbeddedStruct struct {
 	*NidOptNative    `protobuf:"bytes,1,opt,embedded=Field1" json:"Field1,omitempty"`
@@ -610,23 +224,8 @@ type NinEmbeddedStruct struct {
 	XXX_unrecognized []byte        `json:"-"`
 }
 
-func (m *NinEmbeddedStruct) Reset()         { *m = NinEmbeddedStruct{} }
-func (m *NinEmbeddedStruct) String() string { return proto.CompactTextString(m) }
-func (*NinEmbeddedStruct) ProtoMessage()    {}
-
-func (m *NinEmbeddedStruct) GetField200() *NidOptNative {
-	if m != nil {
-		return m.Field200
-	}
-	return nil
-}
-
-func (m *NinEmbeddedStruct) GetField210() bool {
-	if m != nil && m.Field210 != nil {
-		return *m.Field210
-	}
-	return false
-}
+func (m *NinEmbeddedStruct) Reset()      { *m = NinEmbeddedStruct{} }
+func (*NinEmbeddedStruct) ProtoMessage() {}
 
 type NidNestedStruct struct {
 	Field1           NidOptStruct   `protobuf:"bytes,1,opt" json:"Field1"`
@@ -634,9 +233,8 @@ type NidNestedStruct struct {
 	XXX_unrecognized []byte         `json:"-"`
 }
 
-func (m *NidNestedStruct) Reset()         { *m = NidNestedStruct{} }
-func (m *NidNestedStruct) String() string { return proto.CompactTextString(m) }
-func (*NidNestedStruct) ProtoMessage()    {}
+func (m *NidNestedStruct) Reset()      { *m = NidNestedStruct{} }
+func (*NidNestedStruct) ProtoMessage() {}
 
 type NinNestedStruct struct {
 	Field1           *NidOptStruct   `protobuf:"bytes,1,opt" json:"Field1,omitempty"`
@@ -644,95 +242,437 @@ type NinNestedStruct struct {
 	XXX_unrecognized []byte          `json:"-"`
 }
 
-func (m *NinNestedStruct) Reset()         { *m = NinNestedStruct{} }
-func (m *NinNestedStruct) String() string { return proto.CompactTextString(m) }
-func (*NinNestedStruct) ProtoMessage()    {}
-
-func (m *NinNestedStruct) GetField1() *NidOptStruct {
-	if m != nil {
-		return m.Field1
-	}
-	return nil
-}
-
-func (m *NinNestedStruct) GetField2() []*NidRepStruct {
-	if m != nil {
-		return m.Field2
-	}
-	return nil
-}
+func (m *NinNestedStruct) Reset()      { *m = NinNestedStruct{} }
+func (*NinNestedStruct) ProtoMessage() {}
 
 type NidOptUuidAsBytes struct {
 	Id               code_google_com_p_gogoprotobuf_test_custom.Uuid `protobuf:"bytes,1,opt,customtype=code.google.com/p/gogoprotobuf/test/custom.Uuid" json:"Id"`
 	XXX_unrecognized []byte                                          `json:"-"`
 }
 
-func (m *NidOptUuidAsBytes) Reset()         { *m = NidOptUuidAsBytes{} }
-func (m *NidOptUuidAsBytes) String() string { return proto.CompactTextString(m) }
-func (*NidOptUuidAsBytes) ProtoMessage()    {}
+func (m *NidOptUuidAsBytes) Reset()      { *m = NidOptUuidAsBytes{} }
+func (*NidOptUuidAsBytes) ProtoMessage() {}
 
 type NinOptUuidAsBytes struct {
 	Id               *code_google_com_p_gogoprotobuf_test_custom.Uuid `protobuf:"bytes,1,opt,customtype=code.google.com/p/gogoprotobuf/test/custom.Uuid" json:"Id,omitempty"`
 	XXX_unrecognized []byte                                           `json:"-"`
 }
 
-func (m *NinOptUuidAsBytes) Reset()         { *m = NinOptUuidAsBytes{} }
-func (m *NinOptUuidAsBytes) String() string { return proto.CompactTextString(m) }
-func (*NinOptUuidAsBytes) ProtoMessage()    {}
+func (m *NinOptUuidAsBytes) Reset()      { *m = NinOptUuidAsBytes{} }
+func (*NinOptUuidAsBytes) ProtoMessage() {}
 
 type NidRepUuidAsBytes struct {
 	Id               []code_google_com_p_gogoprotobuf_test_custom.Uuid `protobuf:"bytes,1,rep,customtype=code.google.com/p/gogoprotobuf/test/custom.Uuid" json:"Id"`
 	XXX_unrecognized []byte                                            `json:"-"`
 }
 
-func (m *NidRepUuidAsBytes) Reset()         { *m = NidRepUuidAsBytes{} }
-func (m *NidRepUuidAsBytes) String() string { return proto.CompactTextString(m) }
-func (*NidRepUuidAsBytes) ProtoMessage()    {}
+func (m *NidRepUuidAsBytes) Reset()      { *m = NidRepUuidAsBytes{} }
+func (*NidRepUuidAsBytes) ProtoMessage() {}
 
 type NinRepUuidAsBytes struct {
 	Id               []code_google_com_p_gogoprotobuf_test_custom.Uuid `protobuf:"bytes,1,rep,customtype=code.google.com/p/gogoprotobuf/test/custom.Uuid" json:"Id,omitempty"`
 	XXX_unrecognized []byte                                            `json:"-"`
 }
 
-func (m *NinRepUuidAsBytes) Reset()         { *m = NinRepUuidAsBytes{} }
-func (m *NinRepUuidAsBytes) String() string { return proto.CompactTextString(m) }
-func (*NinRepUuidAsBytes) ProtoMessage()    {}
+func (m *NinRepUuidAsBytes) Reset()      { *m = NinRepUuidAsBytes{} }
+func (*NinRepUuidAsBytes) ProtoMessage() {}
 
 type NidOptUint128AsBytes struct {
 	Value            code_google_com_p_gogoprotobuf_test_custom.Uint128 `protobuf:"bytes,1,opt,customtype=code.google.com/p/gogoprotobuf/test/custom.Uint128" json:"Value"`
 	XXX_unrecognized []byte                                             `json:"-"`
 }
 
-func (m *NidOptUint128AsBytes) Reset()         { *m = NidOptUint128AsBytes{} }
-func (m *NidOptUint128AsBytes) String() string { return proto.CompactTextString(m) }
-func (*NidOptUint128AsBytes) ProtoMessage()    {}
+func (m *NidOptUint128AsBytes) Reset()      { *m = NidOptUint128AsBytes{} }
+func (*NidOptUint128AsBytes) ProtoMessage() {}
 
 type NinOptUint128AsBytes struct {
 	Value            *code_google_com_p_gogoprotobuf_test_custom.Uint128 `protobuf:"bytes,1,opt,customtype=code.google.com/p/gogoprotobuf/test/custom.Uint128" json:"Value,omitempty"`
 	XXX_unrecognized []byte                                              `json:"-"`
 }
 
-func (m *NinOptUint128AsBytes) Reset()         { *m = NinOptUint128AsBytes{} }
-func (m *NinOptUint128AsBytes) String() string { return proto.CompactTextString(m) }
-func (*NinOptUint128AsBytes) ProtoMessage()    {}
+func (m *NinOptUint128AsBytes) Reset()      { *m = NinOptUint128AsBytes{} }
+func (*NinOptUint128AsBytes) ProtoMessage() {}
 
 type NidRepUint128AsBytes struct {
 	Value            []code_google_com_p_gogoprotobuf_test_custom.Uint128 `protobuf:"bytes,1,rep,customtype=code.google.com/p/gogoprotobuf/test/custom.Uint128" json:"Value"`
 	XXX_unrecognized []byte                                               `json:"-"`
 }
 
-func (m *NidRepUint128AsBytes) Reset()         { *m = NidRepUint128AsBytes{} }
-func (m *NidRepUint128AsBytes) String() string { return proto.CompactTextString(m) }
-func (*NidRepUint128AsBytes) ProtoMessage()    {}
+func (m *NidRepUint128AsBytes) Reset()      { *m = NidRepUint128AsBytes{} }
+func (*NidRepUint128AsBytes) ProtoMessage() {}
 
 type NinRepUint128AsBytes struct {
 	Value            []code_google_com_p_gogoprotobuf_test_custom.Uint128 `protobuf:"bytes,1,rep,customtype=code.google.com/p/gogoprotobuf/test/custom.Uint128" json:"Value,omitempty"`
 	XXX_unrecognized []byte                                               `json:"-"`
 }
 
-func (m *NinRepUint128AsBytes) Reset()         { *m = NinRepUint128AsBytes{} }
-func (m *NinRepUint128AsBytes) String() string { return proto.CompactTextString(m) }
-func (*NinRepUint128AsBytes) ProtoMessage()    {}
+func (m *NinRepUint128AsBytes) Reset()      { *m = NinRepUint128AsBytes{} }
+func (*NinRepUint128AsBytes) ProtoMessage() {}
 
 func init() {
+}
+func (this *SimpleMessage) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&SimpleMessage{`,
+		`Id:` + fmt.Sprintf("%v", this.Id) + `,`,
+		`SimpleName:` + fmt.Sprintf("%v", this.SimpleName) + `,`,
+		`Time:` + valueToStringThetest(this.Time) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *NidOptNative) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&NidOptNative{`,
+		`Field1:` + fmt.Sprintf("%v", this.Field1) + `,`,
+		`Field2:` + fmt.Sprintf("%v", this.Field2) + `,`,
+		`Field3:` + fmt.Sprintf("%v", this.Field3) + `,`,
+		`Field4:` + fmt.Sprintf("%v", this.Field4) + `,`,
+		`Field5:` + fmt.Sprintf("%v", this.Field5) + `,`,
+		`Field6:` + fmt.Sprintf("%v", this.Field6) + `,`,
+		`Field7:` + fmt.Sprintf("%v", this.Field7) + `,`,
+		`Field8:` + fmt.Sprintf("%v", this.Field8) + `,`,
+		`Field9:` + fmt.Sprintf("%v", this.Field9) + `,`,
+		`Field10:` + fmt.Sprintf("%v", this.Field10) + `,`,
+		`Field11:` + fmt.Sprintf("%v", this.Field11) + `,`,
+		`Field12:` + fmt.Sprintf("%v", this.Field12) + `,`,
+		`Field13:` + fmt.Sprintf("%v", this.Field13) + `,`,
+		`Field14:` + fmt.Sprintf("%v", this.Field14) + `,`,
+		`Field15:` + fmt.Sprintf("%v", this.Field15) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *NinOptNative) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&NinOptNative{`,
+		`Field1:` + valueToStringThetest(this.Field1) + `,`,
+		`Field2:` + valueToStringThetest(this.Field2) + `,`,
+		`Field3:` + valueToStringThetest(this.Field3) + `,`,
+		`Field4:` + valueToStringThetest(this.Field4) + `,`,
+		`Field5:` + valueToStringThetest(this.Field5) + `,`,
+		`Field6:` + valueToStringThetest(this.Field6) + `,`,
+		`Field7:` + valueToStringThetest(this.Field7) + `,`,
+		`Field8:` + valueToStringThetest(this.Field8) + `,`,
+		`Field9:` + valueToStringThetest(this.Field9) + `,`,
+		`Field10:` + valueToStringThetest(this.Field10) + `,`,
+		`Field11:` + valueToStringThetest(this.Field11) + `,`,
+		`Field12:` + valueToStringThetest(this.Field12) + `,`,
+		`Field13:` + valueToStringThetest(this.Field13) + `,`,
+		`Field14:` + valueToStringThetest(this.Field14) + `,`,
+		`Field15:` + valueToStringThetest(this.Field15) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *NidRepNative) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&NidRepNative{`,
+		`Field1:` + fmt.Sprintf("%v", this.Field1) + `,`,
+		`Field2:` + fmt.Sprintf("%v", this.Field2) + `,`,
+		`Field3:` + fmt.Sprintf("%v", this.Field3) + `,`,
+		`Field4:` + fmt.Sprintf("%v", this.Field4) + `,`,
+		`Field5:` + fmt.Sprintf("%v", this.Field5) + `,`,
+		`Field6:` + fmt.Sprintf("%v", this.Field6) + `,`,
+		`Field7:` + fmt.Sprintf("%v", this.Field7) + `,`,
+		`Field8:` + fmt.Sprintf("%v", this.Field8) + `,`,
+		`Field9:` + fmt.Sprintf("%v", this.Field9) + `,`,
+		`Field10:` + fmt.Sprintf("%v", this.Field10) + `,`,
+		`Field11:` + fmt.Sprintf("%v", this.Field11) + `,`,
+		`Field12:` + fmt.Sprintf("%v", this.Field12) + `,`,
+		`Field13:` + fmt.Sprintf("%v", this.Field13) + `,`,
+		`Field14:` + fmt.Sprintf("%v", this.Field14) + `,`,
+		`Field15:` + fmt.Sprintf("%v", this.Field15) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *NinRepNative) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&NinRepNative{`,
+		`Field1:` + fmt.Sprintf("%v", this.Field1) + `,`,
+		`Field2:` + fmt.Sprintf("%v", this.Field2) + `,`,
+		`Field3:` + fmt.Sprintf("%v", this.Field3) + `,`,
+		`Field4:` + fmt.Sprintf("%v", this.Field4) + `,`,
+		`Field5:` + fmt.Sprintf("%v", this.Field5) + `,`,
+		`Field6:` + fmt.Sprintf("%v", this.Field6) + `,`,
+		`Field7:` + fmt.Sprintf("%v", this.Field7) + `,`,
+		`Field8:` + fmt.Sprintf("%v", this.Field8) + `,`,
+		`Field9:` + fmt.Sprintf("%v", this.Field9) + `,`,
+		`Field10:` + fmt.Sprintf("%v", this.Field10) + `,`,
+		`Field11:` + fmt.Sprintf("%v", this.Field11) + `,`,
+		`Field12:` + fmt.Sprintf("%v", this.Field12) + `,`,
+		`Field13:` + fmt.Sprintf("%v", this.Field13) + `,`,
+		`Field14:` + fmt.Sprintf("%v", this.Field14) + `,`,
+		`Field15:` + fmt.Sprintf("%v", this.Field15) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *NidRepPackedNative) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&NidRepPackedNative{`,
+		`Field3:` + fmt.Sprintf("%v", this.Field3) + `,`,
+		`Field4:` + fmt.Sprintf("%v", this.Field4) + `,`,
+		`Field13:` + fmt.Sprintf("%v", this.Field13) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *NinRepPackedNative) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&NinRepPackedNative{`,
+		`Field3:` + fmt.Sprintf("%v", this.Field3) + `,`,
+		`Field4:` + fmt.Sprintf("%v", this.Field4) + `,`,
+		`Field13:` + fmt.Sprintf("%v", this.Field13) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *NidOptStruct) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&NidOptStruct{`,
+		`Field1:` + fmt.Sprintf("%v", this.Field1) + `,`,
+		`Field2:` + fmt.Sprintf("%v", this.Field2) + `,`,
+		`Field3:` + strings.Replace(strings.Replace(this.Field3.String(), "NidOptNative", "NidOptNative", 1), `&`, ``, 1) + `,`,
+		`Field4:` + strings.Replace(strings.Replace(this.Field4.String(), "NinOptNative", "NinOptNative", 1), `&`, ``, 1) + `,`,
+		`Field6:` + fmt.Sprintf("%v", this.Field6) + `,`,
+		`Field7:` + fmt.Sprintf("%v", this.Field7) + `,`,
+		`Field8:` + strings.Replace(strings.Replace(this.Field8.String(), "NidOptNative", "NidOptNative", 1), `&`, ``, 1) + `,`,
+		`Field13:` + fmt.Sprintf("%v", this.Field13) + `,`,
+		`Field14:` + fmt.Sprintf("%v", this.Field14) + `,`,
+		`Field15:` + fmt.Sprintf("%v", this.Field15) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *NinOptStruct) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&NinOptStruct{`,
+		`Field1:` + valueToStringThetest(this.Field1) + `,`,
+		`Field2:` + valueToStringThetest(this.Field2) + `,`,
+		`Field3:` + strings.Replace(fmt.Sprintf("%v", this.Field3), "NidOptNative", "NidOptNative", 1) + `,`,
+		`Field4:` + strings.Replace(fmt.Sprintf("%v", this.Field4), "NinOptNative", "NinOptNative", 1) + `,`,
+		`Field6:` + valueToStringThetest(this.Field6) + `,`,
+		`Field7:` + valueToStringThetest(this.Field7) + `,`,
+		`Field8:` + strings.Replace(fmt.Sprintf("%v", this.Field8), "NidOptNative", "NidOptNative", 1) + `,`,
+		`Field13:` + valueToStringThetest(this.Field13) + `,`,
+		`Field14:` + valueToStringThetest(this.Field14) + `,`,
+		`Field15:` + valueToStringThetest(this.Field15) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *NidRepStruct) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&NidRepStruct{`,
+		`Field1:` + fmt.Sprintf("%v", this.Field1) + `,`,
+		`Field2:` + fmt.Sprintf("%v", this.Field2) + `,`,
+		`Field3:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Field3), "NidOptNative", "NidOptNative", 1), `&`, ``, 1) + `,`,
+		`Field4:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Field4), "NinOptNative", "NinOptNative", 1), `&`, ``, 1) + `,`,
+		`Field6:` + fmt.Sprintf("%v", this.Field6) + `,`,
+		`Field7:` + fmt.Sprintf("%v", this.Field7) + `,`,
+		`Field8:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Field8), "NidOptNative", "NidOptNative", 1), `&`, ``, 1) + `,`,
+		`Field13:` + fmt.Sprintf("%v", this.Field13) + `,`,
+		`Field14:` + fmt.Sprintf("%v", this.Field14) + `,`,
+		`Field15:` + fmt.Sprintf("%v", this.Field15) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *NinRepStruct) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&NinRepStruct{`,
+		`Field1:` + fmt.Sprintf("%v", this.Field1) + `,`,
+		`Field2:` + fmt.Sprintf("%v", this.Field2) + `,`,
+		`Field3:` + strings.Replace(fmt.Sprintf("%v", this.Field3), "NidOptNative", "NidOptNative", 1) + `,`,
+		`Field4:` + strings.Replace(fmt.Sprintf("%v", this.Field4), "NinOptNative", "NinOptNative", 1) + `,`,
+		`Field6:` + fmt.Sprintf("%v", this.Field6) + `,`,
+		`Field7:` + fmt.Sprintf("%v", this.Field7) + `,`,
+		`Field8:` + strings.Replace(fmt.Sprintf("%v", this.Field8), "NidOptNative", "NidOptNative", 1) + `,`,
+		`Field13:` + fmt.Sprintf("%v", this.Field13) + `,`,
+		`Field14:` + fmt.Sprintf("%v", this.Field14) + `,`,
+		`Field15:` + fmt.Sprintf("%v", this.Field15) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *NidEmbeddedStruct) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&NidEmbeddedStruct{`,
+		`NidOptNative:` + strings.Replace(strings.Replace(this.NidOptNative.String(), "NidOptNative", "NidOptNative", 1), `&`, ``, 1) + `,`,
+		`Field200:` + strings.Replace(strings.Replace(this.Field200.String(), "NidOptNative", "NidOptNative", 1), `&`, ``, 1) + `,`,
+		`Field210:` + fmt.Sprintf("%v", this.Field210) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *NinEmbeddedStruct) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&NinEmbeddedStruct{`,
+		`NidOptNative:` + strings.Replace(fmt.Sprintf("%v", this.NidOptNative), "NidOptNative", "NidOptNative", 1) + `,`,
+		`Field200:` + strings.Replace(fmt.Sprintf("%v", this.Field200), "NidOptNative", "NidOptNative", 1) + `,`,
+		`Field210:` + valueToStringThetest(this.Field210) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *NidNestedStruct) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&NidNestedStruct{`,
+		`Field1:` + strings.Replace(strings.Replace(this.Field1.String(), "NidOptStruct", "NidOptStruct", 1), `&`, ``, 1) + `,`,
+		`Field2:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Field2), "NidRepStruct", "NidRepStruct", 1), `&`, ``, 1) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *NinNestedStruct) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&NinNestedStruct{`,
+		`Field1:` + strings.Replace(fmt.Sprintf("%v", this.Field1), "NidOptStruct", "NidOptStruct", 1) + `,`,
+		`Field2:` + strings.Replace(fmt.Sprintf("%v", this.Field2), "NidRepStruct", "NidRepStruct", 1) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *NidOptUuidAsBytes) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&NidOptUuidAsBytes{`,
+		`Id:` + fmt.Sprintf("%v", this.Id) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *NinOptUuidAsBytes) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&NinOptUuidAsBytes{`,
+		`Id:` + valueToStringThetest(this.Id) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *NidRepUuidAsBytes) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&NidRepUuidAsBytes{`,
+		`Id:` + fmt.Sprintf("%v", this.Id) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *NinRepUuidAsBytes) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&NinRepUuidAsBytes{`,
+		`Id:` + fmt.Sprintf("%v", this.Id) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *NidOptUint128AsBytes) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&NidOptUint128AsBytes{`,
+		`Value:` + fmt.Sprintf("%v", this.Value) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *NinOptUint128AsBytes) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&NinOptUint128AsBytes{`,
+		`Value:` + valueToStringThetest(this.Value) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *NidRepUint128AsBytes) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&NidRepUint128AsBytes{`,
+		`Value:` + fmt.Sprintf("%v", this.Value) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *NinRepUint128AsBytes) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&NinRepUint128AsBytes{`,
+		`Value:` + fmt.Sprintf("%v", this.Value) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func valueToStringThetest(v interface{}) string {
+	rv := reflect.ValueOf(v)
+	if rv.IsNil() {
+		return "nil"
+	}
+	pv := reflect.Indirect(rv).Interface()
+	return fmt.Sprintf("*%v", pv)
 }

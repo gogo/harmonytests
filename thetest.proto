@@ -36,6 +36,10 @@ import "code.google.com/p/gogoprotobuf/gogoproto/gogo.proto";
 //vis = value is set
 //vim = value is missing
 
+option (gogoproto.goproto_stringer_all) = false;
+option (gogoproto.stringer_all) = true;
+option (gogoproto.goproto_getters_all) = false;
+
 message SimpleMessage {
 	optional bytes Id = 1 [(gogoproto.customtype) = "code.google.com/p/gogoprotobuf/test/custom.Uuid", (gogoproto.nullable) = false];
 	optional string SimpleName = 2 [(gogoproto.nullable) = false];
