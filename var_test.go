@@ -29,6 +29,7 @@ package gogoprototest
 import (
 	"bytes"
 	gogoproto "code.google.com/p/gogoprotobuf/proto"
+	"code.google.com/p/gogoprotobuf/test"
 	"code.google.com/p/gogoprotobuf/test/custom"
 	gotest "code.google.com/p/gogoprototest/go"
 	gogotest "code.google.com/p/gogoprototest/gogo"
@@ -72,8 +73,8 @@ func testBytes(t *testing.T, a M, astr []byte) {
 var name = "name"
 var time int64 = 1
 
-var id1 = custom.Uuid{0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x46, 0x07, 0x88, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f}
-var id2 = custom.Uuid{0, 1, 2, 3, 4, 5, 70, 7, 136, 9, 10, 11, 12, 15, 14, 15}
+var id1 = test.Uuid{0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x46, 0x07, 0x88, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f}
+var id2 = test.Uuid{0, 1, 2, 3, 4, 5, 70, 7, 136, 9, 10, 11, 12, 15, 14, 15}
 
 var idstr1 = "00010203-0405-4607-8809-0a0b0c0d0e0f"
 var idstr2 = "00010203-0405-4607-8809-0a0b0c0f0e0f"
@@ -1035,7 +1036,7 @@ var (
 		Id: [][]byte{idbytes1, idbytes2},
 	}
 	gogovisNidRepUuidAsBytes = &gogotest.NidRepUuidAsBytes{
-		Id: []custom.Uuid{id1, id2},
+		Id: []test.Uuid{id1, id2},
 	}
 	govimNidRepUuidAsBytes = &gotest.NidRepUuidAsBytes{
 		Id: nil,
@@ -1047,7 +1048,7 @@ var (
 		Id: [][]byte{idbytes1, idbytes2},
 	}
 	gogovisNinRepUuidAsBytes = &gogotest.NinRepUuidAsBytes{
-		Id: []custom.Uuid{id1, id2},
+		Id: []test.Uuid{id1, id2},
 	}
 	govimNinRepUuidAsBytes = &gotest.NinRepUuidAsBytes{
 		Id: nil,

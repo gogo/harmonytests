@@ -42,9 +42,6 @@ func (x TheTestEnum) Enum() *TheTestEnum {
 func (x TheTestEnum) String() string {
 	return proto.EnumName(TheTestEnum_name, int32(x))
 }
-func (x TheTestEnum) MarshalJSON() ([]byte, error) {
-	return json.Marshal(x.String())
-}
 func (x *TheTestEnum) UnmarshalJSON(data []byte) error {
 	value, err := proto.UnmarshalJSONEnum(TheTestEnum_value, data, "TheTestEnum")
 	if err != nil {
@@ -76,7 +73,7 @@ func (m *NinOptEnum) GetField1() TheTestEnum {
 	if m != nil && m.Field1 != nil {
 		return *m.Field1
 	}
-	return 0
+	return A
 }
 
 type NidRepEnum struct {

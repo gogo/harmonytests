@@ -41,7 +41,7 @@ option (gogoproto.stringer_all) = true;
 option (gogoproto.goproto_getters_all) = false;
 
 message SimpleMessage {
-	optional bytes Id = 1 [(gogoproto.customtype) = "code.google.com/p/gogoprotobuf/test/custom.Uuid", (gogoproto.nullable) = false];
+	optional bytes Id = 1 [(gogoproto.customtype) = "code.google.com/p/gogoprotobuf/test.Uuid", (gogoproto.nullable) = false];
 	optional string SimpleName = 2 [(gogoproto.nullable) = false];
 	optional int64 Time = 3;
 }
@@ -205,19 +205,19 @@ message NinNestedStruct {
 }
 
 message NidOptUuidAsBytes {
-	optional bytes Id = 1 [(gogoproto.customtype) = "code.google.com/p/gogoprotobuf/test/custom.Uuid", (gogoproto.nullable) = false];
+	optional bytes Id = 1 [(gogoproto.customtype) = "code.google.com/p/gogoprotobuf/test.Uuid", (gogoproto.nullable) = false];
 }
 
 message NinOptUuidAsBytes {
-	optional bytes Id = 1 [(gogoproto.customtype) = "code.google.com/p/gogoprotobuf/test/custom.Uuid"];
+	optional bytes Id = 1 [(gogoproto.customtype) = "code.google.com/p/gogoprotobuf/test.Uuid"];
 }
 
 message NidRepUuidAsBytes {
-	repeated bytes Id = 1 [(gogoproto.customtype) = "code.google.com/p/gogoprotobuf/test/custom.Uuid", (gogoproto.nullable) = false];
+	repeated bytes Id = 1 [(gogoproto.customtype) = "code.google.com/p/gogoprotobuf/test.Uuid", (gogoproto.nullable) = false];
 }
 
 message NinRepUuidAsBytes {
-	repeated bytes Id = 1 [(gogoproto.customtype) = "code.google.com/p/gogoprotobuf/test/custom.Uuid"];
+	repeated bytes Id = 1 [(gogoproto.customtype) = "code.google.com/p/gogoprotobuf/test.Uuid"];
 }
 
 message NidOptUint128AsBytes {

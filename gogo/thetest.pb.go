@@ -10,6 +10,7 @@ import math "math"
 
 // discarding unused import gogoproto "code.google.com/p/gogoprotobuf/gogoproto/gogo.pb"
 
+import code_google_com_p_gogoprotobuf_test "code.google.com/p/gogoprotobuf/test"
 import code_google_com_p_gogoprotobuf_test_custom "code.google.com/p/gogoprotobuf/test/custom"
 
 import fmt "fmt"
@@ -22,10 +23,10 @@ var _ = &json.SyntaxError{}
 var _ = math.Inf
 
 type SimpleMessage struct {
-	Id               code_google_com_p_gogoprotobuf_test_custom.Uuid `protobuf:"bytes,1,opt,customtype=code.google.com/p/gogoprotobuf/test/custom.Uuid" json:"Id"`
-	SimpleName       string                                          `protobuf:"bytes,2,opt" json:"SimpleName"`
-	Time             *int64                                          `protobuf:"varint,3,opt" json:"Time,omitempty"`
-	XXX_unrecognized []byte                                          `json:"-"`
+	Id               code_google_com_p_gogoprotobuf_test.Uuid `protobuf:"bytes,1,opt,customtype=code.google.com/p/gogoprotobuf/test.Uuid" json:"Id"`
+	SimpleName       string                                   `protobuf:"bytes,2,opt" json:"SimpleName"`
+	Time             *int64                                   `protobuf:"varint,3,opt" json:"Time,omitempty"`
+	XXX_unrecognized []byte                                   `json:"-"`
 }
 
 func (m *SimpleMessage) Reset()      { *m = SimpleMessage{} }
@@ -246,32 +247,32 @@ func (m *NinNestedStruct) Reset()      { *m = NinNestedStruct{} }
 func (*NinNestedStruct) ProtoMessage() {}
 
 type NidOptUuidAsBytes struct {
-	Id               code_google_com_p_gogoprotobuf_test_custom.Uuid `protobuf:"bytes,1,opt,customtype=code.google.com/p/gogoprotobuf/test/custom.Uuid" json:"Id"`
-	XXX_unrecognized []byte                                          `json:"-"`
+	Id               code_google_com_p_gogoprotobuf_test.Uuid `protobuf:"bytes,1,opt,customtype=code.google.com/p/gogoprotobuf/test.Uuid" json:"Id"`
+	XXX_unrecognized []byte                                   `json:"-"`
 }
 
 func (m *NidOptUuidAsBytes) Reset()      { *m = NidOptUuidAsBytes{} }
 func (*NidOptUuidAsBytes) ProtoMessage() {}
 
 type NinOptUuidAsBytes struct {
-	Id               *code_google_com_p_gogoprotobuf_test_custom.Uuid `protobuf:"bytes,1,opt,customtype=code.google.com/p/gogoprotobuf/test/custom.Uuid" json:"Id,omitempty"`
-	XXX_unrecognized []byte                                           `json:"-"`
+	Id               *code_google_com_p_gogoprotobuf_test.Uuid `protobuf:"bytes,1,opt,customtype=code.google.com/p/gogoprotobuf/test.Uuid" json:"Id,omitempty"`
+	XXX_unrecognized []byte                                    `json:"-"`
 }
 
 func (m *NinOptUuidAsBytes) Reset()      { *m = NinOptUuidAsBytes{} }
 func (*NinOptUuidAsBytes) ProtoMessage() {}
 
 type NidRepUuidAsBytes struct {
-	Id               []code_google_com_p_gogoprotobuf_test_custom.Uuid `protobuf:"bytes,1,rep,customtype=code.google.com/p/gogoprotobuf/test/custom.Uuid" json:"Id"`
-	XXX_unrecognized []byte                                            `json:"-"`
+	Id               []code_google_com_p_gogoprotobuf_test.Uuid `protobuf:"bytes,1,rep,customtype=code.google.com/p/gogoprotobuf/test.Uuid" json:"Id"`
+	XXX_unrecognized []byte                                     `json:"-"`
 }
 
 func (m *NidRepUuidAsBytes) Reset()      { *m = NidRepUuidAsBytes{} }
 func (*NidRepUuidAsBytes) ProtoMessage() {}
 
 type NinRepUuidAsBytes struct {
-	Id               []code_google_com_p_gogoprotobuf_test_custom.Uuid `protobuf:"bytes,1,rep,customtype=code.google.com/p/gogoprotobuf/test/custom.Uuid" json:"Id,omitempty"`
-	XXX_unrecognized []byte                                            `json:"-"`
+	Id               []code_google_com_p_gogoprotobuf_test.Uuid `protobuf:"bytes,1,rep,customtype=code.google.com/p/gogoprotobuf/test.Uuid" json:"Id,omitempty"`
+	XXX_unrecognized []byte                                     `json:"-"`
 }
 
 func (m *NinRepUuidAsBytes) Reset()      { *m = NinRepUuidAsBytes{} }
