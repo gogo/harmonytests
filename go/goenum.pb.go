@@ -42,15 +42,45 @@ func (x TheTestEnum) Enum() *TheTestEnum {
 func (x TheTestEnum) String() string {
 	return proto.EnumName(TheTestEnum_name, int32(x))
 }
-func (x TheTestEnum) MarshalJSON() ([]byte, error) {
-	return json.Marshal(x.String())
-}
 func (x *TheTestEnum) UnmarshalJSON(data []byte) error {
 	value, err := proto.UnmarshalJSONEnum(TheTestEnum_value, data, "TheTestEnum")
 	if err != nil {
 		return err
 	}
 	*x = TheTestEnum(value)
+	return nil
+}
+
+type AnotherTestEnum int32
+
+const (
+	AnotherTestEnum_D AnotherTestEnum = 10
+	AnotherTestEnum_E AnotherTestEnum = 11
+)
+
+var AnotherTestEnum_name = map[int32]string{
+	10: "D",
+	11: "E",
+}
+var AnotherTestEnum_value = map[string]int32{
+	"D": 10,
+	"E": 11,
+}
+
+func (x AnotherTestEnum) Enum() *AnotherTestEnum {
+	p := new(AnotherTestEnum)
+	*p = x
+	return p
+}
+func (x AnotherTestEnum) String() string {
+	return proto.EnumName(AnotherTestEnum_name, int32(x))
+}
+func (x *AnotherTestEnum) UnmarshalJSON(data []byte) error {
+	value, err := proto.UnmarshalJSONEnum(AnotherTestEnum_value, data, "AnotherTestEnum")
+	if err != nil {
+		return err
+	}
+	*x = AnotherTestEnum(value)
 	return nil
 }
 
@@ -67,7 +97,7 @@ func (m *NidOptEnum) GetField1() TheTestEnum {
 	if m != nil && m.Field1 != nil {
 		return *m.Field1
 	}
-	return 0
+	return TheTestEnum_A
 }
 
 type NinOptEnum struct {
@@ -83,7 +113,7 @@ func (m *NinOptEnum) GetField1() TheTestEnum {
 	if m != nil && m.Field1 != nil {
 		return *m.Field1
 	}
-	return 0
+	return TheTestEnum_A
 }
 
 type NidRepEnum struct {
@@ -118,6 +148,111 @@ func (m *NinRepEnum) GetField1() []TheTestEnum {
 	return nil
 }
 
+type NidOptEnumDefault struct {
+	Field1           *TheTestEnum `protobuf:"varint,1,opt,enum=gogoprototest.TheTestEnum,def=2" json:"Field1,omitempty"`
+	XXX_unrecognized []byte       `json:"-"`
+}
+
+func (m *NidOptEnumDefault) Reset()         { *m = NidOptEnumDefault{} }
+func (m *NidOptEnumDefault) String() string { return proto.CompactTextString(m) }
+func (*NidOptEnumDefault) ProtoMessage()    {}
+
+const Default_NidOptEnumDefault_Field1 TheTestEnum = TheTestEnum_C
+
+func (m *NidOptEnumDefault) GetField1() TheTestEnum {
+	if m != nil && m.Field1 != nil {
+		return *m.Field1
+	}
+	return Default_NidOptEnumDefault_Field1
+}
+
+type NinOptEnumDefault struct {
+	Field1           *TheTestEnum `protobuf:"varint,1,opt,enum=gogoprototest.TheTestEnum,def=2" json:"Field1,omitempty"`
+	XXX_unrecognized []byte       `json:"-"`
+}
+
+func (m *NinOptEnumDefault) Reset()         { *m = NinOptEnumDefault{} }
+func (m *NinOptEnumDefault) String() string { return proto.CompactTextString(m) }
+func (*NinOptEnumDefault) ProtoMessage()    {}
+
+const Default_NinOptEnumDefault_Field1 TheTestEnum = TheTestEnum_C
+
+func (m *NinOptEnumDefault) GetField1() TheTestEnum {
+	if m != nil && m.Field1 != nil {
+		return *m.Field1
+	}
+	return Default_NinOptEnumDefault_Field1
+}
+
+type AnotherNidOptEnum struct {
+	Field1           *AnotherTestEnum `protobuf:"varint,1,opt,enum=gogoprototest.AnotherTestEnum" json:"Field1,omitempty"`
+	XXX_unrecognized []byte           `json:"-"`
+}
+
+func (m *AnotherNidOptEnum) Reset()         { *m = AnotherNidOptEnum{} }
+func (m *AnotherNidOptEnum) String() string { return proto.CompactTextString(m) }
+func (*AnotherNidOptEnum) ProtoMessage()    {}
+
+func (m *AnotherNidOptEnum) GetField1() AnotherTestEnum {
+	if m != nil && m.Field1 != nil {
+		return *m.Field1
+	}
+	return AnotherTestEnum_D
+}
+
+type AnotherNinOptEnum struct {
+	Field1           *AnotherTestEnum `protobuf:"varint,1,opt,enum=gogoprototest.AnotherTestEnum" json:"Field1,omitempty"`
+	XXX_unrecognized []byte           `json:"-"`
+}
+
+func (m *AnotherNinOptEnum) Reset()         { *m = AnotherNinOptEnum{} }
+func (m *AnotherNinOptEnum) String() string { return proto.CompactTextString(m) }
+func (*AnotherNinOptEnum) ProtoMessage()    {}
+
+func (m *AnotherNinOptEnum) GetField1() AnotherTestEnum {
+	if m != nil && m.Field1 != nil {
+		return *m.Field1
+	}
+	return AnotherTestEnum_D
+}
+
+type AnotherNidOptEnumDefault struct {
+	Field1           *AnotherTestEnum `protobuf:"varint,1,opt,enum=gogoprototest.AnotherTestEnum,def=11" json:"Field1,omitempty"`
+	XXX_unrecognized []byte           `json:"-"`
+}
+
+func (m *AnotherNidOptEnumDefault) Reset()         { *m = AnotherNidOptEnumDefault{} }
+func (m *AnotherNidOptEnumDefault) String() string { return proto.CompactTextString(m) }
+func (*AnotherNidOptEnumDefault) ProtoMessage()    {}
+
+const Default_AnotherNidOptEnumDefault_Field1 AnotherTestEnum = AnotherTestEnum_E
+
+func (m *AnotherNidOptEnumDefault) GetField1() AnotherTestEnum {
+	if m != nil && m.Field1 != nil {
+		return *m.Field1
+	}
+	return Default_AnotherNidOptEnumDefault_Field1
+}
+
+type AnotherNinOptEnumDefault struct {
+	Field1           *AnotherTestEnum `protobuf:"varint,1,opt,enum=gogoprototest.AnotherTestEnum,def=11" json:"Field1,omitempty"`
+	XXX_unrecognized []byte           `json:"-"`
+}
+
+func (m *AnotherNinOptEnumDefault) Reset()         { *m = AnotherNinOptEnumDefault{} }
+func (m *AnotherNinOptEnumDefault) String() string { return proto.CompactTextString(m) }
+func (*AnotherNinOptEnumDefault) ProtoMessage()    {}
+
+const Default_AnotherNinOptEnumDefault_Field1 AnotherTestEnum = AnotherTestEnum_E
+
+func (m *AnotherNinOptEnumDefault) GetField1() AnotherTestEnum {
+	if m != nil && m.Field1 != nil {
+		return *m.Field1
+	}
+	return Default_AnotherNinOptEnumDefault_Field1
+}
+
 func init() {
 	proto.RegisterEnum("gogoprototest.TheTestEnum", TheTestEnum_name, TheTestEnum_value)
+	proto.RegisterEnum("gogoprototest.AnotherTestEnum", AnotherTestEnum_name, AnotherTestEnum_value)
 }

@@ -2604,3 +2604,789 @@ func TestJsonVimNinGoGoToGoRepUint128AsBytes(t *testing.T) {
 		vis:      false,
 	}.test(t)
 }
+
+//
+
+//Optional Another Enum
+//Values are available
+//Nullable is false
+//Go -> Go
+func TestJsonVisAnotherNidGoOptEnum(t *testing.T) {
+	testJsonGo{
+		msg:    govisAnotherNidOptEnum,
+		newMsg: newGoProtoAnotherNidOptEnum,
+	}.test(t)
+}
+
+//Optional Another Enum
+//Values are available
+//Nullable is false
+//GoGo -> GoGo
+func TestJsonVisAnotherNidGoGoOptEnum(t *testing.T) {
+	testJsonGoGo{
+		msg:    gogovisAnotherNidOptEnum,
+		newMsg: newGoGoProtoAnotherNidOptEnum,
+	}.test(t)
+}
+
+//Optional Another Enum
+//Values are available
+//Nullable is false
+//Go -> GoGo
+func TestJsonVisAnotherNidGoToGoGoOptEnum(t *testing.T) {
+	testJsonGoToGoGo{
+		gomsg:      govisAnotherNidOptEnum,
+		newGogomsg: newGoGoProtoAnotherNidOptEnum,
+		gogomsg:    gogovisAnotherNidOptEnum,
+	}.test(t)
+}
+
+//Optional Another Enum
+//Values are available
+//Nullable is false
+//GoGo -> Go
+func TestJsonVisAnotherNidGoGoToGoOptEnum(t *testing.T) {
+	testJsonGoGoToGo{
+		gogomsg:  gogovisAnotherNidOptEnum,
+		newGomsg: newGoProtoAnotherNidOptEnum,
+		gomsg:    govisAnotherNidOptEnum,
+		vis:      true,
+	}.test(t)
+}
+
+//
+
+//Optional Another Enum
+//Values are not available
+//Nullable is false
+//Go -> Go
+func TestJsonVimAnotherNidGoOptEnum(t *testing.T) {
+	testJsonGo{
+		msg:    govimAnotherNidOptEnum,
+		newMsg: newGoProtoAnotherNidOptEnum,
+	}.test(t)
+}
+
+//Optional Another Enum
+//Values are not available
+//Nullable is false
+//GoGo -> GoGo
+func TestJsonVimAnotherNidGoGoOptEnum(t *testing.T) {
+	testJsonGoGo{
+		msg:    gogovimAnotherNidOptEnum,
+		newMsg: newGoGoProtoAnotherNidOptEnum,
+	}.test(t)
+}
+
+//Optional Another Enum
+//Values are not available
+//Nullable is false
+//Go -> GoGo
+func TestJsonVimAnotherNidGoToGoGoOptEnum(t *testing.T) {
+	testJsonGoToGoGo{
+		gomsg:      gozeroAnotherNidOptEnum,
+		newGogomsg: newGoGoProtoAnotherNidOptEnum,
+		gogomsg:    gogovimAnotherNidOptEnum,
+	}.test(t)
+}
+
+//Optional Another Enum
+//Values are not available
+//Nullable is false
+//GoGo -> Go
+func TestJsonVimAnotherNidGoGoToGoOptEnum(t *testing.T) {
+	testJsonGoGoToGo{
+		gogomsg:  gogovimAnotherNidOptEnum,
+		newGomsg: newGoProtoAnotherNidOptEnum,
+		gomsg:    gozeroAnotherNidOptEnum,
+		vis:      false,
+	}.test(t)
+}
+
+//
+
+//Optional Another Enum
+//Values are available
+//Nullable is true
+//Go -> Go
+func TestJsonVisAnotherNinGoOptEnum(t *testing.T) {
+	testJsonGo{
+		msg:    govisAnotherNinOptEnum,
+		newMsg: newGoProtoAnotherNinOptEnum,
+	}.test(t)
+}
+
+//Optional Another Enum
+//Values are available
+//Nullable is true
+//GoGo -> GoGo
+func TestJsonVisAnotherNinGoGoOptEnum(t *testing.T) {
+	testJsonGoGo{
+		msg:    gogovisAnotherNinOptEnum,
+		newMsg: newGoGoProtoAnotherNinOptEnum,
+	}.test(t)
+}
+
+//Optional Another Enum
+//Values are available
+//Nullable is true
+//Go -> GoGo
+func TestJsonVisAnotherNinGoToGoGoOptEnum(t *testing.T) {
+	testJsonGoToGoGo{
+		gomsg:      govisAnotherNinOptEnum,
+		newGogomsg: newGoGoProtoAnotherNinOptEnum,
+		gogomsg:    gogovisAnotherNinOptEnum,
+	}.test(t)
+}
+
+//Optional Another Enum
+//Values are available
+//Nullable is true
+//GoGo -> Go
+func TestJsonVisAnotherNinGoGoToGoOptEnum(t *testing.T) {
+	testJsonGoGoToGo{
+		gogomsg:  gogovisAnotherNinOptEnum,
+		newGomsg: newGoProtoAnotherNinOptEnum,
+		gomsg:    govisAnotherNinOptEnum,
+		vis:      true,
+	}.test(t)
+}
+
+//
+
+//Optional Another Enum
+//Values are not available
+//Nullable is true
+//Go -> Go
+func TestJsonVimAnotherNinGoOptEnum(t *testing.T) {
+	testJsonGo{
+		msg:    govimAnotherNinOptEnum,
+		newMsg: newGoProtoAnotherNinOptEnum,
+	}.test(t)
+}
+
+//Optional Another Enum
+//Values are not available
+//Nullable is true
+//GoGo -> GoGo
+func TestJsonVimAnotherNinGoGoOptEnum(t *testing.T) {
+	testJsonGoGo{
+		msg:    gogovimAnotherNinOptEnum,
+		newMsg: newGoGoProtoAnotherNinOptEnum,
+	}.test(t)
+}
+
+//Optional Another Enum
+//Values are not available
+//Nullable is true
+//Go -> GoGo
+func TestJsonVimAnotherNinGoToGoGoOptEnum(t *testing.T) {
+	testJsonGoToGoGo{
+		gomsg:      govimAnotherNinOptEnum,
+		newGogomsg: newGoGoProtoAnotherNinOptEnum,
+		gogomsg:    gogovimAnotherNinOptEnum,
+	}.test(t)
+}
+
+//Optional Another Enum
+//Values are not available
+//Nullable is true
+//GoGo -> Go
+func TestJsonVimAnotherNinGoGoToGoOptEnum(t *testing.T) {
+	testJsonGoGoToGo{
+		gogomsg:  gogovimAnotherNinOptEnum,
+		newGomsg: newGoProtoAnotherNinOptEnum,
+		gomsg:    govimAnotherNinOptEnum,
+		vis:      false,
+	}.test(t)
+}
+
+//
+
+//Optional Enum Default
+//Values are available
+//Nullable is false
+//Go -> Go
+func TestJsonVisNidGoOptEnumDefault(t *testing.T) {
+	testJsonGo{
+		msg:    govisNidOptEnumDefault,
+		newMsg: newGoProtoNidOptEnumDefault,
+	}.test(t)
+}
+
+//Optional Enum Default
+//Values are available
+//Nullable is false
+//GoGo -> GoGo
+func TestJsonVisNidGoGoOptEnumDefault(t *testing.T) {
+	testJsonGoGo{
+		msg:    gogovisNidOptEnumDefault,
+		newMsg: newGoGoProtoNidOptEnumDefault,
+	}.test(t)
+}
+
+//Optional Enum Default
+//Values are available
+//Nullable is false
+//Go -> GoGo
+func TestJsonVisNidGoToGoGoOptEnumDefault(t *testing.T) {
+	testJsonGoToGoGo{
+		gomsg:      govisNidOptEnumDefault,
+		newGogomsg: newGoGoProtoNidOptEnumDefault,
+		gogomsg:    gogovisNidOptEnumDefault,
+	}.test(t)
+}
+
+//Optional Enum Default
+//Values are available
+//Nullable is false
+//GoGo -> Go
+func TestJsonVisNidGoGoToGoOptEnumDefault(t *testing.T) {
+	testJsonGoGoToGo{
+		gogomsg:  gogovisNidOptEnumDefault,
+		newGomsg: newGoProtoNidOptEnumDefault,
+		gomsg:    govisNidOptEnumDefault,
+		vis:      true,
+	}.test(t)
+}
+
+//
+
+//Optional Enum Default
+//Values are not available
+//Nullable is false
+//Go -> Go
+func TestJsonVimNidGoOptEnumDefault(t *testing.T) {
+	testJsonGo{
+		msg:    govimNidOptEnumDefault,
+		newMsg: newGoProtoNidOptEnumDefault,
+	}.test(t)
+}
+
+//Optional Enum Default
+//Values are not available
+//Nullable is false
+//GoGo -> GoGo
+func TestJsonVimNidGoGoOptEnumDefault(t *testing.T) {
+	testJsonGoGo{
+		msg:    gogovimNidOptEnumDefault,
+		newMsg: newGoGoProtoNidOptEnumDefault,
+	}.test(t)
+}
+
+//Optional Enum Default
+//Values are not available
+//Nullable is false
+//Go -> GoGo
+func TestJsonVimNidGoToGoGoOptEnumDefault(t *testing.T) {
+	testJsonGoToGoGo{
+		gomsg:      gozeroNidOptEnumDefault,
+		newGogomsg: newGoGoProtoNidOptEnumDefault,
+		gogomsg:    gogovimNidOptEnumDefault,
+	}.test(t)
+}
+
+//Optional Enum Default
+//Values are not available
+//Nullable is false
+//GoGo -> Go
+func TestJsonVimNidGoGoToGoOptEnumDefault(t *testing.T) {
+	testJsonGoGoToGo{
+		gogomsg:  gogovimNidOptEnumDefault,
+		newGomsg: newGoProtoNidOptEnumDefault,
+		gomsg:    gozeroNidOptEnumDefault,
+		vis:      false,
+	}.test(t)
+}
+
+//
+
+//Optional Enum Default
+//Values are available
+//Nullable is true
+//Go -> Go
+func TestJsonVisNinGoOptEnumDefault(t *testing.T) {
+	testJsonGo{
+		msg:    govisNinOptEnumDefault,
+		newMsg: newGoProtoNinOptEnumDefault,
+	}.test(t)
+}
+
+//Optional Enum Default
+//Values are available
+//Nullable is true
+//GoGo -> GoGo
+func TestJsonVisNinGoGoOptEnumDefault(t *testing.T) {
+	testJsonGoGo{
+		msg:    gogovisNinOptEnumDefault,
+		newMsg: newGoGoProtoNinOptEnumDefault,
+	}.test(t)
+}
+
+//Optional Enum Default
+//Values are available
+//Nullable is true
+//Go -> GoGo
+func TestJsonVisNinGoToGoGoOptEnumDefault(t *testing.T) {
+	testJsonGoToGoGo{
+		gomsg:      govisNinOptEnumDefault,
+		newGogomsg: newGoGoProtoNinOptEnumDefault,
+		gogomsg:    gogovisNinOptEnumDefault,
+	}.test(t)
+}
+
+//Optional Enum Default
+//Values are available
+//Nullable is true
+//GoGo -> Go
+func TestJsonVisNinGoGoToGoOptEnumDefault(t *testing.T) {
+	testJsonGoGoToGo{
+		gogomsg:  gogovisNinOptEnumDefault,
+		newGomsg: newGoProtoNinOptEnumDefault,
+		gomsg:    govisNinOptEnumDefault,
+		vis:      true,
+	}.test(t)
+}
+
+//
+
+//Optional Enum Default
+//Values are not available
+//Nullable is true
+//Go -> Go
+func TestJsonVimNinGoOptEnumDefault(t *testing.T) {
+	testJsonGo{
+		msg:    govimNinOptEnumDefault,
+		newMsg: newGoProtoNinOptEnumDefault,
+	}.test(t)
+}
+
+//Optional Enum Default
+//Values are not available
+//Nullable is true
+//GoGo -> GoGo
+func TestJsonVimNinGoGoOptEnumDefault(t *testing.T) {
+	testJsonGoGo{
+		msg:    gogovimNinOptEnumDefault,
+		newMsg: newGoGoProtoNinOptEnumDefault,
+	}.test(t)
+}
+
+//Optional Enum Default
+//Values are not available
+//Nullable is true
+//Go -> GoGo
+func TestJsonVimNinGoToGoGoOptEnumDefault(t *testing.T) {
+	testJsonGoToGoGo{
+		gomsg:      govimNinOptEnumDefault,
+		newGogomsg: newGoGoProtoNinOptEnumDefault,
+		gogomsg:    gogovimNinOptEnumDefault,
+	}.test(t)
+}
+
+//Optional Enum Default
+//Values are not available
+//Nullable is true
+//GoGo -> Go
+func TestJsonVimNinGoGoToGoOptEnumDefault(t *testing.T) {
+	testJsonGoGoToGo{
+		gogomsg:  gogovimNinOptEnumDefault,
+		newGomsg: newGoProtoNinOptEnumDefault,
+		gomsg:    govimNinOptEnumDefault,
+		vis:      false,
+	}.test(t)
+}
+
+//
+
+//Optional Another Enum Default
+//Values are available
+//Nullable is false
+//Go -> Go
+func TestJsonVisAnotherNidGoOptEnumDefault(t *testing.T) {
+	testJsonGo{
+		msg:    govisAnotherNidOptEnumDefault,
+		newMsg: newGoProtoAnotherNidOptEnumDefault,
+	}.test(t)
+}
+
+//Optional Another Enum Default
+//Values are available
+//Nullable is false
+//GoGo -> GoGo
+func TestJsonVisAnotherNidGoGoOptEnumDefault(t *testing.T) {
+	testJsonGoGo{
+		msg:    gogovisAnotherNidOptEnumDefault,
+		newMsg: newGoGoProtoAnotherNidOptEnumDefault,
+	}.test(t)
+}
+
+//Optional Another Enum Default
+//Values are available
+//Nullable is false
+//Go -> GoGo
+func TestJsonVisAnotherNidGoToGoGoOptEnumDefault(t *testing.T) {
+	testJsonGoToGoGo{
+		gomsg:      govisAnotherNidOptEnumDefault,
+		newGogomsg: newGoGoProtoAnotherNidOptEnumDefault,
+		gogomsg:    gogovisAnotherNidOptEnumDefault,
+	}.test(t)
+}
+
+//Optional Another Enum Default
+//Values are available
+//Nullable is false
+//GoGo -> Go
+func TestJsonVisAnotherNidGoGoToGoOptEnumDefault(t *testing.T) {
+	testJsonGoGoToGo{
+		gogomsg:  gogovisAnotherNidOptEnumDefault,
+		newGomsg: newGoProtoAnotherNidOptEnumDefault,
+		gomsg:    govisAnotherNidOptEnumDefault,
+		vis:      true,
+	}.test(t)
+}
+
+//
+
+//Optional Another Enum Default
+//Values are not available
+//Nullable is false
+//Go -> Go
+func TestJsonVimAnotherNidGoOptEnumDefault(t *testing.T) {
+	testJsonGo{
+		msg:    govimAnotherNidOptEnumDefault,
+		newMsg: newGoProtoAnotherNidOptEnumDefault,
+	}.test(t)
+}
+
+//Optional Another Enum Default
+//Values are not available
+//Nullable is false
+//GoGo -> GoGo
+func TestJsonVimAnotherNidGoGoOptEnumDefault(t *testing.T) {
+	testJsonGoGo{
+		msg:    gogovimAnotherNidOptEnumDefault,
+		newMsg: newGoGoProtoAnotherNidOptEnumDefault,
+	}.test(t)
+}
+
+//Optional Another Enum Default
+//Values are not available
+//Nullable is false
+//Go -> GoGo
+func TestJsonVimAnotherNidGoToGoGoOptEnumDefault(t *testing.T) {
+	testJsonGoToGoGo{
+		gomsg:      gozeroAnotherNidOptEnumDefault,
+		newGogomsg: newGoGoProtoAnotherNidOptEnumDefault,
+		gogomsg:    gogovimAnotherNidOptEnumDefault,
+	}.test(t)
+}
+
+//Optional Another Enum Default
+//Values are not available
+//Nullable is false
+//GoGo -> Go
+func TestJsonVimAnotherNidGoGoToGoOptEnumDefault(t *testing.T) {
+	testJsonGoGoToGo{
+		gogomsg:  gogovimAnotherNidOptEnumDefault,
+		newGomsg: newGoProtoAnotherNidOptEnumDefault,
+		gomsg:    gozeroAnotherNidOptEnumDefault,
+		vis:      false,
+	}.test(t)
+}
+
+//
+
+//Optional Another Enum Default
+//Values are available
+//Nullable is true
+//Go -> Go
+func TestJsonVisAnotherNinGoOptEnumDefault(t *testing.T) {
+	testJsonGo{
+		msg:    govisAnotherNinOptEnumDefault,
+		newMsg: newGoProtoAnotherNinOptEnumDefault,
+	}.test(t)
+}
+
+//Optional Another Enum Default
+//Values are available
+//Nullable is true
+//GoGo -> GoGo
+func TestJsonVisAnotherNinGoGoOptEnumDefault(t *testing.T) {
+	testJsonGoGo{
+		msg:    gogovisAnotherNinOptEnumDefault,
+		newMsg: newGoGoProtoAnotherNinOptEnumDefault,
+	}.test(t)
+}
+
+//Optional Another Enum Default
+//Values are available
+//Nullable is true
+//Go -> GoGo
+func TestJsonVisAnotherNinGoToGoGoOptEnumDefault(t *testing.T) {
+	testJsonGoToGoGo{
+		gomsg:      govisAnotherNinOptEnumDefault,
+		newGogomsg: newGoGoProtoAnotherNinOptEnumDefault,
+		gogomsg:    gogovisAnotherNinOptEnumDefault,
+	}.test(t)
+}
+
+//Optional Another Enum Default
+//Values are available
+//Nullable is true
+//GoGo -> Go
+func TestJsonVisAnotherNinGoGoToGoOptEnumDefault(t *testing.T) {
+	testJsonGoGoToGo{
+		gogomsg:  gogovisAnotherNinOptEnumDefault,
+		newGomsg: newGoProtoAnotherNinOptEnumDefault,
+		gomsg:    govisAnotherNinOptEnumDefault,
+		vis:      true,
+	}.test(t)
+}
+
+//
+
+//Optional Another Enum Default
+//Values are not available
+//Nullable is true
+//Go -> Go
+func TestJsonVimAnotherNinGoOptEnumDefault(t *testing.T) {
+	testJsonGo{
+		msg:    govimAnotherNinOptEnumDefault,
+		newMsg: newGoProtoAnotherNinOptEnumDefault,
+	}.test(t)
+}
+
+//Optional Another Enum Default
+//Values are not available
+//Nullable is true
+//GoGo -> GoGo
+func TestJsonVimAnotherNinGoGoOptEnumDefault(t *testing.T) {
+	testJsonGoGo{
+		msg:    gogovimAnotherNinOptEnumDefault,
+		newMsg: newGoGoProtoAnotherNinOptEnumDefault,
+	}.test(t)
+}
+
+//Optional Another Enum Default
+//Values are not available
+//Nullable is true
+//Go -> GoGo
+func TestJsonVimAnotherNinGoToGoGoOptEnumDefault(t *testing.T) {
+	testJsonGoToGoGo{
+		gomsg:      govimAnotherNinOptEnumDefault,
+		newGogomsg: newGoGoProtoAnotherNinOptEnumDefault,
+		gogomsg:    gogovimAnotherNinOptEnumDefault,
+	}.test(t)
+}
+
+//Optional Another Enum Default
+//Values are not available
+//Nullable is true
+//GoGo -> Go
+func TestJsonVimAnotherNinGoGoToGoOptEnumDefault(t *testing.T) {
+	testJsonGoGoToGo{
+		gogomsg:  gogovimAnotherNinOptEnumDefault,
+		newGomsg: newGoProtoAnotherNinOptEnumDefault,
+		gomsg:    govimAnotherNinOptEnumDefault,
+		vis:      false,
+	}.test(t)
+}
+
+//
+
+//Optional Native
+//Values are available
+//Nullable is false
+//Go -> Go
+func TestJsonVisNidGoOptNativeDefault(t *testing.T) {
+	testJsonGo{
+		msg:    govisNidOptNativeDefault,
+		newMsg: newGoProtoNidOptNativeDefault,
+	}.test(t)
+}
+
+//Optional Native
+//Values are available
+//Nullable is false
+//GoGo -> GoGo
+func TestJsonVisNidGoGoOptNativeDefault(t *testing.T) {
+	testJsonGoGo{
+		msg:    gogovisNidOptNativeDefault,
+		newMsg: newGoGoProtoNidOptNativeDefault,
+	}.test(t)
+}
+
+//Optional Native
+//Values are available
+//Nullable is false
+//Go -> GoGo
+func TestJsonVisNidGoToGoGoOptNativeDefault(t *testing.T) {
+	testJsonGoToGoGo{
+		gomsg:      govisNidOptNativeDefault,
+		newGogomsg: newGoGoProtoNidOptNativeDefault,
+		gogomsg:    gogovisNidOptNativeDefault,
+	}.test(t)
+}
+
+//Optional Native
+//Values are available
+//Nullable is false
+//GoGo -> Go
+func TestJsonVisNidGoGoToGoOptNativeDefault(t *testing.T) {
+	testJsonGoGoToGo{
+		gogomsg:  gogovisNidOptNativeDefault,
+		newGomsg: newGoProtoNidOptNativeDefault,
+		gomsg:    govisNidOptNativeDefault,
+		vis:      true,
+	}.test(t)
+}
+
+//
+
+//Optional Native
+//Values are not available
+//Nullable is false
+//Go -> Go
+func TestJsonVimNidGoOptNativeDefault(t *testing.T) {
+	testJsonGo{
+		msg:    govimNidOptNativeDefault,
+		newMsg: newGoProtoNidOptNativeDefault,
+	}.test(t)
+}
+
+//Optional Native
+//Values are not available
+//Nullable is false
+//GoGo -> GoGo
+func TestJsonVimNidGoGoOptNativeDefault(t *testing.T) {
+	testJsonGoGo{
+		msg:    gogovimNidOptNativeDefault,
+		newMsg: newGoGoProtoNidOptNativeDefault,
+	}.test(t)
+}
+
+//Optional Native
+//Values are not available
+//Nullable is false
+//Go -> GoGo
+func TestJsonVimNidGoToGoGoOptNativeDefault(t *testing.T) {
+	testJsonGoToGoGo{
+		gomsg:      govimNidOptNativeDefault,
+		newGogomsg: newGoGoProtoNidOptNativeDefault,
+		gogomsg:    gogovimNidOptNativeDefault,
+	}.test(t)
+}
+
+//Optional Native
+//Values are not available
+//Nullable is false
+//GoGo -> Go
+func TestJsonVimNidGoGoToGoOptNativeDefault(t *testing.T) {
+	testJsonGoGoToGo{
+		gogomsg:  gogovimNidOptNativeDefault,
+		newGomsg: newGoProtoNidOptNativeDefault,
+		gomsg:    gozeroNidOptNativeDefault,
+		vis:      false,
+	}.test(t)
+}
+
+//
+
+//Optional Native
+//Values are available
+//Nullable is true
+//Go -> Go
+func TestJsonVisNinGoOptNativeDefault(t *testing.T) {
+	testJsonGo{
+		msg:    govisNinOptNativeDefault,
+		newMsg: newGoProtoNinOptNativeDefault,
+	}.test(t)
+}
+
+//Optional Native
+//Values are available
+//Nullable is true
+//GoGo -> GoGo
+func TestJsonVisNinGoGoOptNativeDefault(t *testing.T) {
+	testJsonGoGo{
+		msg:    gogovisNinOptNativeDefault,
+		newMsg: newGoGoProtoNinOptNativeDefault,
+	}.test(t)
+}
+
+//Optional Native
+//Values are available
+//Nullable is true
+//Go -> GoGo
+func TestJsonVisNinGoToGoGoOptNativeDefault(t *testing.T) {
+	testJsonGoToGoGo{
+		gomsg:      govisNinOptNativeDefault,
+		newGogomsg: newGoGoProtoNinOptNativeDefault,
+		gogomsg:    gogovisNinOptNativeDefault,
+	}.test(t)
+}
+
+//Optional Native
+//Values are available
+//Nullable is true
+//GoGo -> Go
+func TestJsonVisNinGoGoToGoOptNativeDefault(t *testing.T) {
+	testJsonGoGoToGo{
+		gogomsg:  gogovisNinOptNativeDefault,
+		newGomsg: newGoProtoNinOptNativeDefault,
+		gomsg:    govisNinOptNativeDefault,
+		vis:      true,
+	}.test(t)
+}
+
+//
+
+//Optional Native
+//Values are not available
+//Nullable is true
+//Go -> Go
+func TestJsonVimNinGoOptNativeDefault(t *testing.T) {
+	testJsonGo{
+		msg:    govimNinOptNativeDefault,
+		newMsg: newGoProtoNinOptNativeDefault,
+	}.test(t)
+}
+
+//Optional Native
+//Values are not available
+//Nullable is true
+//GoGo -> GoGo
+func TestJsonVimNinGoGoOptNativeDefault(t *testing.T) {
+	testJsonGoGo{
+		msg:    gogovimNinOptNativeDefault,
+		newMsg: newGoGoProtoNinOptNativeDefault,
+	}.test(t)
+}
+
+//Optional Native
+//Values are not available
+//Nullable is true
+//Go -> GoGo
+func TestJsonVimNinGoToGoGoOptNativeDefault(t *testing.T) {
+	testJsonGoToGoGo{
+		gomsg:      govimNinOptNativeDefault,
+		newGogomsg: newGoGoProtoNinOptNativeDefault,
+		gogomsg:    gogovimNinOptNativeDefault,
+	}.test(t)
+}
+
+//Optional Native
+//Values are not available
+//Nullable is true
+//GoGo -> Go
+func TestJsonVimNinGoGoToGoOptNativeDefault(t *testing.T) {
+	testJsonGoGoToGo{
+		gogomsg:  gogovimNinOptNativeDefault,
+		newGomsg: newGoProtoNinOptNativeDefault,
+		gomsg:    govimNinOptNativeDefault,
+		vis:      false,
+	}.test(t)
+}
+
+//

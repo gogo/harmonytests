@@ -310,6 +310,80 @@ type NinRepUint128AsBytes struct {
 func (m *NinRepUint128AsBytes) Reset()      { *m = NinRepUint128AsBytes{} }
 func (*NinRepUint128AsBytes) ProtoMessage() {}
 
+type NidOptNativeDefault struct {
+	Field1           float64 `protobuf:"fixed64,1,opt,def=1234.1234" json:"Field1"`
+	Field2           float32 `protobuf:"fixed32,2,opt,def=1234.1234" json:"Field2"`
+	Field3           int32   `protobuf:"varint,3,opt,def=1234" json:"Field3"`
+	Field4           int64   `protobuf:"varint,4,opt,def=1234" json:"Field4"`
+	Field5           uint32  `protobuf:"varint,5,opt,def=1234" json:"Field5"`
+	Field6           uint64  `protobuf:"varint,6,opt,def=1234" json:"Field6"`
+	Field7           int32   `protobuf:"zigzag32,7,opt,def=1234" json:"Field7"`
+	Field8           int64   `protobuf:"zigzag64,8,opt,def=1234" json:"Field8"`
+	Field9           uint32  `protobuf:"fixed32,9,opt,def=1234" json:"Field9"`
+	Field10          int32   `protobuf:"fixed32,10,opt,def=1234" json:"Field10"`
+	Field11          uint64  `protobuf:"fixed64,11,opt,def=1234" json:"Field11"`
+	Field12          int64   `protobuf:"fixed64,12,opt,def=1234" json:"Field12"`
+	Field13          bool    `protobuf:"varint,13,opt,def=1" json:"Field13"`
+	Field14          string  `protobuf:"bytes,14,opt,def=1234" json:"Field14"`
+	Field15          []byte  `protobuf:"bytes,15,opt" json:"Field15"`
+	XXX_unrecognized []byte  `json:"-"`
+}
+
+func (m *NidOptNativeDefault) Reset()      { *m = NidOptNativeDefault{} }
+func (*NidOptNativeDefault) ProtoMessage() {}
+
+const Default_NidOptNativeDefault_Field1 float64 = 1234.1234
+const Default_NidOptNativeDefault_Field2 float32 = 1234.1234
+const Default_NidOptNativeDefault_Field3 int32 = 1234
+const Default_NidOptNativeDefault_Field4 int64 = 1234
+const Default_NidOptNativeDefault_Field5 uint32 = 1234
+const Default_NidOptNativeDefault_Field6 uint64 = 1234
+const Default_NidOptNativeDefault_Field7 int32 = 1234
+const Default_NidOptNativeDefault_Field8 int64 = 1234
+const Default_NidOptNativeDefault_Field9 uint32 = 1234
+const Default_NidOptNativeDefault_Field10 int32 = 1234
+const Default_NidOptNativeDefault_Field11 uint64 = 1234
+const Default_NidOptNativeDefault_Field12 int64 = 1234
+const Default_NidOptNativeDefault_Field13 bool = true
+const Default_NidOptNativeDefault_Field14 string = "1234"
+
+type NinOptNativeDefault struct {
+	Field1           *float64 `protobuf:"fixed64,1,opt,def=1234.1234" json:"Field1,omitempty"`
+	Field2           *float32 `protobuf:"fixed32,2,opt,def=1234.1234" json:"Field2,omitempty"`
+	Field3           *int32   `protobuf:"varint,3,opt,def=1234" json:"Field3,omitempty"`
+	Field4           *int64   `protobuf:"varint,4,opt,def=1234" json:"Field4,omitempty"`
+	Field5           *uint32  `protobuf:"varint,5,opt,def=1234" json:"Field5,omitempty"`
+	Field6           *uint64  `protobuf:"varint,6,opt,def=1234" json:"Field6,omitempty"`
+	Field7           *int32   `protobuf:"zigzag32,7,opt,def=1234" json:"Field7,omitempty"`
+	Field8           *int64   `protobuf:"zigzag64,8,opt,def=1234" json:"Field8,omitempty"`
+	Field9           *uint32  `protobuf:"fixed32,9,opt,def=1234" json:"Field9,omitempty"`
+	Field10          *int32   `protobuf:"fixed32,10,opt,def=1234" json:"Field10,omitempty"`
+	Field11          *uint64  `protobuf:"fixed64,11,opt,def=1234" json:"Field11,omitempty"`
+	Field12          *int64   `protobuf:"fixed64,12,opt,def=1234" json:"Field12,omitempty"`
+	Field13          *bool    `protobuf:"varint,13,opt,def=1" json:"Field13,omitempty"`
+	Field14          *string  `protobuf:"bytes,14,opt,def=1234" json:"Field14,omitempty"`
+	Field15          []byte   `protobuf:"bytes,15,opt" json:"Field15,omitempty"`
+	XXX_unrecognized []byte   `json:"-"`
+}
+
+func (m *NinOptNativeDefault) Reset()      { *m = NinOptNativeDefault{} }
+func (*NinOptNativeDefault) ProtoMessage() {}
+
+const Default_NinOptNativeDefault_Field1 float64 = 1234.1234
+const Default_NinOptNativeDefault_Field2 float32 = 1234.1234
+const Default_NinOptNativeDefault_Field3 int32 = 1234
+const Default_NinOptNativeDefault_Field4 int64 = 1234
+const Default_NinOptNativeDefault_Field5 uint32 = 1234
+const Default_NinOptNativeDefault_Field6 uint64 = 1234
+const Default_NinOptNativeDefault_Field7 int32 = 1234
+const Default_NinOptNativeDefault_Field8 int64 = 1234
+const Default_NinOptNativeDefault_Field9 uint32 = 1234
+const Default_NinOptNativeDefault_Field10 int32 = 1234
+const Default_NinOptNativeDefault_Field11 uint64 = 1234
+const Default_NinOptNativeDefault_Field12 int64 = 1234
+const Default_NinOptNativeDefault_Field13 bool = true
+const Default_NinOptNativeDefault_Field14 string = "1234"
+
 func init() {
 }
 func (this *SimpleMessage) String() string {
@@ -664,6 +738,56 @@ func (this *NinRepUint128AsBytes) String() string {
 	}
 	s := strings.Join([]string{`&NinRepUint128AsBytes{`,
 		`Value:` + fmt.Sprintf("%v", this.Value) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *NidOptNativeDefault) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&NidOptNativeDefault{`,
+		`Field1:` + fmt.Sprintf("%v", this.Field1) + `,`,
+		`Field2:` + fmt.Sprintf("%v", this.Field2) + `,`,
+		`Field3:` + fmt.Sprintf("%v", this.Field3) + `,`,
+		`Field4:` + fmt.Sprintf("%v", this.Field4) + `,`,
+		`Field5:` + fmt.Sprintf("%v", this.Field5) + `,`,
+		`Field6:` + fmt.Sprintf("%v", this.Field6) + `,`,
+		`Field7:` + fmt.Sprintf("%v", this.Field7) + `,`,
+		`Field8:` + fmt.Sprintf("%v", this.Field8) + `,`,
+		`Field9:` + fmt.Sprintf("%v", this.Field9) + `,`,
+		`Field10:` + fmt.Sprintf("%v", this.Field10) + `,`,
+		`Field11:` + fmt.Sprintf("%v", this.Field11) + `,`,
+		`Field12:` + fmt.Sprintf("%v", this.Field12) + `,`,
+		`Field13:` + fmt.Sprintf("%v", this.Field13) + `,`,
+		`Field14:` + fmt.Sprintf("%v", this.Field14) + `,`,
+		`Field15:` + fmt.Sprintf("%v", this.Field15) + `,`,
+		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *NinOptNativeDefault) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&NinOptNativeDefault{`,
+		`Field1:` + valueToStringThetest(this.Field1) + `,`,
+		`Field2:` + valueToStringThetest(this.Field2) + `,`,
+		`Field3:` + valueToStringThetest(this.Field3) + `,`,
+		`Field4:` + valueToStringThetest(this.Field4) + `,`,
+		`Field5:` + valueToStringThetest(this.Field5) + `,`,
+		`Field6:` + valueToStringThetest(this.Field6) + `,`,
+		`Field7:` + valueToStringThetest(this.Field7) + `,`,
+		`Field8:` + valueToStringThetest(this.Field8) + `,`,
+		`Field9:` + valueToStringThetest(this.Field9) + `,`,
+		`Field10:` + valueToStringThetest(this.Field10) + `,`,
+		`Field11:` + valueToStringThetest(this.Field11) + `,`,
+		`Field12:` + valueToStringThetest(this.Field12) + `,`,
+		`Field13:` + valueToStringThetest(this.Field13) + `,`,
+		`Field14:` + valueToStringThetest(this.Field14) + `,`,
+		`Field15:` + valueToStringThetest(this.Field15) + `,`,
 		`XXX_unrecognized:` + fmt.Sprintf("%v", this.XXX_unrecognized) + `,`,
 		`}`,
 	}, "")

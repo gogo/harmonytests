@@ -1128,3 +1128,348 @@ var (
 		Value: nil,
 	}
 )
+
+var (
+	newGoProtoAnotherNidOptEnum   = func() goproto.Message { return &gotest.AnotherNidOptEnum{} }
+	newGoGoProtoAnotherNidOptEnum = func() gogoproto.Message { return &gogotest.AnotherNidOptEnum{} }
+	newGoProtoAnotherNinOptEnum   = func() goproto.Message { return &gotest.AnotherNinOptEnum{} }
+	newGoGoProtoAnotherNinOptEnum = func() gogoproto.Message { return &gogotest.AnotherNinOptEnum{} }
+)
+
+var (
+	govisAnotherNidOptEnum = &gotest.AnotherNidOptEnum{
+		Field1: gotest.AnotherTestEnum_E.Enum(),
+	}
+	gogovisAnotherNidOptEnum = &gogotest.AnotherNidOptEnum{
+		Field1: gogotest.E,
+	}
+	govimAnotherNidOptEnum = &gotest.AnotherNidOptEnum{
+		Field1: nil,
+	}
+	gozeroAnotherNidOptEnum = &gotest.AnotherNidOptEnum{
+		Field1: gotest.AnotherTestEnum_D.Enum(),
+	}
+	gogovimAnotherNidOptEnum = &gogotest.AnotherNidOptEnum{
+		Field1: gogotest.D,
+	}
+	govisAnotherNinOptEnum = &gotest.AnotherNinOptEnum{
+		Field1: gotest.AnotherTestEnum_E.Enum(),
+	}
+	gogovisAnotherNinOptEnum = &gogotest.AnotherNinOptEnum{
+		Field1: gogotest.E.Enum(),
+	}
+	govimAnotherNinOptEnum = &gotest.AnotherNinOptEnum{
+		Field1: nil,
+	}
+	gogovimAnotherNinOptEnum = &gogotest.AnotherNinOptEnum{
+		Field1: nil,
+	}
+)
+
+var (
+	godefAnotherNidOptEnum = &gotest.AnotherNidOptEnum{
+		Field1: gotest.AnotherTestEnum_D.Enum(),
+	}
+	gogodefAnotherNidOptEnum = &gogotest.AnotherNidOptEnum{
+		Field1: gogotest.D,
+	}
+)
+
+var (
+	newGoProtoNidOptEnumDefault   = func() goproto.Message { return &gotest.NidOptEnumDefault{} }
+	newGoGoProtoNidOptEnumDefault = func() gogoproto.Message { return &gogotest.NidOptEnumDefault{} }
+	newGoProtoNinOptEnumDefault   = func() goproto.Message { return &gotest.NinOptEnumDefault{} }
+	newGoGoProtoNinOptEnumDefault = func() gogoproto.Message { return &gogotest.NinOptEnumDefault{} }
+)
+
+var (
+	govisNidOptEnumDefault = &gotest.NidOptEnumDefault{
+		Field1: gotest.TheTestEnum_B.Enum(),
+	}
+	gogovisNidOptEnumDefault = &gogotest.NidOptEnumDefault{
+		Field1: gogotest.B,
+	}
+	govimNidOptEnumDefault = &gotest.NidOptEnumDefault{
+		Field1: nil,
+	}
+	gozeroNidOptEnumDefault = &gotest.NidOptEnumDefault{
+		Field1: gotest.TheTestEnum_A.Enum(),
+	}
+	gogovimNidOptEnumDefault = &gogotest.NidOptEnumDefault{
+		Field1: gogotest.A,
+	}
+	govisNinOptEnumDefault = &gotest.NinOptEnumDefault{
+		Field1: gotest.TheTestEnum_B.Enum(),
+	}
+	gogovisNinOptEnumDefault = &gogotest.NinOptEnumDefault{
+		Field1: gogotest.B.Enum(),
+	}
+	govimNinOptEnumDefault = &gotest.NinOptEnumDefault{
+		Field1: nil,
+	}
+	gogovimNinOptEnumDefault = &gogotest.NinOptEnumDefault{
+		Field1: nil,
+	}
+)
+
+var (
+	godefNidOptEnumDefault = &gotest.NidOptEnumDefault{
+		Field1: gotest.Default_NidOptEnumDefault_Field1.Enum(),
+	}
+	gogodefNidOptEnumDefault = &gogotest.NidOptEnumDefault{
+		Field1: gogotest.Default_NidOptEnumDefault_Field1,
+	}
+)
+
+var (
+	newGoProtoAnotherNidOptEnumDefault   = func() goproto.Message { return &gotest.AnotherNidOptEnumDefault{} }
+	newGoGoProtoAnotherNidOptEnumDefault = func() gogoproto.Message { return &gogotest.AnotherNidOptEnumDefault{} }
+	newGoProtoAnotherNinOptEnumDefault   = func() goproto.Message { return &gotest.AnotherNinOptEnumDefault{} }
+	newGoGoProtoAnotherNinOptEnumDefault = func() gogoproto.Message { return &gogotest.AnotherNinOptEnumDefault{} }
+)
+
+var (
+	govisAnotherNidOptEnumDefault = &gotest.AnotherNidOptEnumDefault{
+		Field1: gotest.AnotherTestEnum_E.Enum(),
+	}
+	gogovisAnotherNidOptEnumDefault = &gogotest.AnotherNidOptEnumDefault{
+		Field1: gogotest.E,
+	}
+	govimAnotherNidOptEnumDefault = &gotest.AnotherNidOptEnumDefault{
+		Field1: nil,
+	}
+	gozeroAnotherNidOptEnumDefault = &gotest.AnotherNidOptEnumDefault{
+		Field1: gotest.AnotherTestEnum_D.Enum(),
+	}
+	gogovimAnotherNidOptEnumDefault = &gogotest.AnotherNidOptEnumDefault{
+		Field1: gogotest.D,
+	}
+	govisAnotherNinOptEnumDefault = &gotest.AnotherNinOptEnumDefault{
+		Field1: gotest.AnotherTestEnum_E.Enum(),
+	}
+	gogovisAnotherNinOptEnumDefault = &gogotest.AnotherNinOptEnumDefault{
+		Field1: gogotest.E.Enum(),
+	}
+	govimAnotherNinOptEnumDefault = &gotest.AnotherNinOptEnumDefault{
+		Field1: nil,
+	}
+	gogovimAnotherNinOptEnumDefault = &gogotest.AnotherNinOptEnumDefault{
+		Field1: nil,
+	}
+)
+
+var (
+	godefAnotherNidOptEnumDefault = &gotest.AnotherNidOptEnumDefault{
+		Field1: gotest.Default_AnotherNidOptEnumDefault_Field1.Enum(),
+	}
+	gogodefAnotherNidOptEnumDefault = &gogotest.AnotherNidOptEnumDefault{
+		Field1: gogotest.Default_AnotherNidOptEnumDefault_Field1,
+	}
+)
+
+var (
+	newGoProtoNidOptNativeDefault   = func() goproto.Message { return &gotest.NidOptNativeDefault{} }
+	newGoGoProtoNidOptNativeDefault = func() gogoproto.Message { return &gogotest.NidOptNativeDefault{} }
+)
+
+var (
+	govisNidOptNativeDefault = &gotest.NidOptNativeDefault{
+		Field1:  &field1,
+		Field2:  &field2,
+		Field3:  &field3,
+		Field4:  &field4,
+		Field5:  &field5,
+		Field6:  &field6,
+		Field7:  &field7,
+		Field8:  &field8,
+		Field9:  &field9,
+		Field10: &field10,
+		Field11: &field11,
+		Field12: &field12,
+		Field13: &field13,
+		Field14: &field14,
+		Field15: field15,
+	}
+	gogovisNidOptNativeDefault = &gogotest.NidOptNativeDefault{
+		Field1:  field1,
+		Field2:  field2,
+		Field3:  field3,
+		Field4:  field4,
+		Field5:  field5,
+		Field6:  field6,
+		Field7:  field7,
+		Field8:  field8,
+		Field9:  field9,
+		Field10: field10,
+		Field11: field11,
+		Field12: field12,
+		Field13: field13,
+		Field14: field14,
+		Field15: field15,
+	}
+)
+
+var (
+	govimNidOptNativeDefault = &gotest.NidOptNativeDefault{
+		Field1:  nil,
+		Field2:  nil,
+		Field3:  nil,
+		Field4:  nil,
+		Field5:  nil,
+		Field6:  nil,
+		Field7:  nil,
+		Field8:  nil,
+		Field9:  nil,
+		Field10: nil,
+		Field11: nil,
+		Field12: nil,
+		Field13: nil,
+		Field14: nil,
+		Field15: nil,
+	}
+	gozeroNidOptNativeDefault = &gotest.NidOptNativeDefault{
+		Field1:  &zero1,
+		Field2:  &zero2,
+		Field3:  &zero3,
+		Field4:  &zero4,
+		Field5:  &zero5,
+		Field6:  &zero6,
+		Field7:  &zero7,
+		Field8:  &zero8,
+		Field9:  &zero9,
+		Field10: &zero10,
+		Field11: &zero11,
+		Field12: &zero12,
+		Field13: &zero13,
+		Field14: &zero14,
+		Field15: zero15,
+	}
+	gogovimNidOptNativeDefault = &gogotest.NidOptNativeDefault{
+		Field1:  zero1,
+		Field2:  zero2,
+		Field3:  zero3,
+		Field4:  zero4,
+		Field5:  zero5,
+		Field6:  zero6,
+		Field7:  zero7,
+		Field8:  zero8,
+		Field9:  zero9,
+		Field10: zero10,
+		Field11: zero11,
+		Field12: zero12,
+		Field13: zero13,
+		Field14: zero14,
+		Field15: zero15,
+	}
+)
+
+var (
+	godefNidOptNativeDefault = &gotest.NidOptNativeDefault{
+		Field1:  goproto.Float64(gotest.Default_NidOptNativeDefault_Field1),
+		Field2:  goproto.Float32(gotest.Default_NidOptNativeDefault_Field2),
+		Field3:  goproto.Int32(gotest.Default_NidOptNativeDefault_Field3),
+		Field4:  goproto.Int64(gotest.Default_NidOptNativeDefault_Field4),
+		Field5:  goproto.Uint32(gotest.Default_NidOptNativeDefault_Field5),
+		Field6:  goproto.Uint64(gotest.Default_NidOptNativeDefault_Field6),
+		Field7:  goproto.Int32(gotest.Default_NidOptNativeDefault_Field7),
+		Field8:  goproto.Int64(gotest.Default_NidOptNativeDefault_Field8),
+		Field9:  goproto.Uint32(gotest.Default_NidOptNativeDefault_Field9),
+		Field10: goproto.Int32(gotest.Default_NidOptNativeDefault_Field10),
+		Field11: goproto.Uint64(gotest.Default_NidOptNativeDefault_Field11),
+		Field12: goproto.Int64(gotest.Default_NidOptNativeDefault_Field12),
+		Field13: goproto.Bool(gotest.Default_NidOptNativeDefault_Field13),
+		Field14: goproto.String(gotest.Default_NidOptNativeDefault_Field14),
+	}
+	gogodefNidOptNativeDefault = &gogotest.NidOptNativeDefault{
+		Field1:  gogotest.Default_NidOptNativeDefault_Field1,
+		Field2:  gogotest.Default_NidOptNativeDefault_Field2,
+		Field3:  gogotest.Default_NidOptNativeDefault_Field3,
+		Field4:  gogotest.Default_NidOptNativeDefault_Field4,
+		Field5:  gogotest.Default_NidOptNativeDefault_Field5,
+		Field6:  gogotest.Default_NidOptNativeDefault_Field6,
+		Field7:  gogotest.Default_NidOptNativeDefault_Field7,
+		Field8:  gogotest.Default_NidOptNativeDefault_Field8,
+		Field9:  gogotest.Default_NidOptNativeDefault_Field9,
+		Field10: gogotest.Default_NidOptNativeDefault_Field10,
+		Field11: gogotest.Default_NidOptNativeDefault_Field11,
+		Field12: gogotest.Default_NidOptNativeDefault_Field12,
+		Field13: gogotest.Default_NidOptNativeDefault_Field13,
+		Field14: gogotest.Default_NidOptNativeDefault_Field14,
+	}
+)
+
+var (
+	newGoProtoNinOptNativeDefault   = func() goproto.Message { return &gotest.NinOptNativeDefault{} }
+	newGoGoProtoNinOptNativeDefault = func() gogoproto.Message { return &gogotest.NinOptNativeDefault{} }
+)
+
+var (
+	govisNinOptNativeDefault = &gotest.NinOptNativeDefault{
+		Field1:  &field1,
+		Field2:  &field2,
+		Field3:  &field3,
+		Field4:  &field4,
+		Field5:  &field5,
+		Field6:  &field6,
+		Field7:  &field7,
+		Field8:  &field8,
+		Field9:  &field9,
+		Field10: &field10,
+		Field11: &field11,
+		Field12: &field12,
+		Field13: &field13,
+		Field14: &field14,
+		Field15: field15,
+	}
+	gogovisNinOptNativeDefault = &gogotest.NinOptNativeDefault{
+		Field1:  &field1,
+		Field2:  &field2,
+		Field3:  &field3,
+		Field4:  &field4,
+		Field5:  &field5,
+		Field6:  &field6,
+		Field7:  &field7,
+		Field8:  &field8,
+		Field9:  &field9,
+		Field10: &field10,
+		Field11: &field11,
+		Field12: &field12,
+		Field13: &field13,
+		Field14: &field14,
+		Field15: field15,
+	}
+	govimNinOptNativeDefault = &gotest.NinOptNativeDefault{
+		Field1:  nil,
+		Field2:  nil,
+		Field3:  nil,
+		Field4:  nil,
+		Field5:  nil,
+		Field6:  nil,
+		Field7:  nil,
+		Field8:  nil,
+		Field9:  nil,
+		Field10: nil,
+		Field11: nil,
+		Field12: nil,
+		Field13: nil,
+		Field14: nil,
+		Field15: nil,
+	}
+	gogovimNinOptNativeDefault = &gogotest.NinOptNativeDefault{
+		Field1:  nil,
+		Field2:  nil,
+		Field3:  nil,
+		Field4:  nil,
+		Field5:  nil,
+		Field6:  nil,
+		Field7:  nil,
+		Field8:  nil,
+		Field9:  nil,
+		Field10: nil,
+		Field11: nil,
+		Field12: nil,
+		Field13: nil,
+		Field14: nil,
+		Field15: nil,
+	}
+)
