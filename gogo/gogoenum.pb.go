@@ -134,17 +134,6 @@ func (m *NinRepEnum) GetField1() []TheTestEnum {
 	return nil
 }
 
-type NidOptEnumDefault struct {
-	Field1           TheTestEnum `protobuf:"varint,1,opt,enum=gogoprototest.TheTestEnum,def=2" json:"Field1"`
-	XXX_unrecognized []byte      `json:"-"`
-}
-
-func (m *NidOptEnumDefault) Reset()         { *m = NidOptEnumDefault{} }
-func (m *NidOptEnumDefault) String() string { return proto.CompactTextString(m) }
-func (*NidOptEnumDefault) ProtoMessage()    {}
-
-const Default_NidOptEnumDefault_Field1 TheTestEnum = C
-
 type NinOptEnumDefault struct {
 	Field1           *TheTestEnum `protobuf:"varint,1,opt,enum=gogoprototest.TheTestEnum,def=2" json:"Field1,omitempty"`
 	XXX_unrecognized []byte       `json:"-"`
@@ -163,15 +152,6 @@ func (m *NinOptEnumDefault) GetField1() TheTestEnum {
 	return Default_NinOptEnumDefault_Field1
 }
 
-type AnotherNidOptEnum struct {
-	Field1           AnotherTestEnum `protobuf:"varint,1,opt,enum=gogoprototest.AnotherTestEnum,def=10" json:"Field1"`
-	XXX_unrecognized []byte          `json:"-"`
-}
-
-func (m *AnotherNidOptEnum) Reset()         { *m = AnotherNidOptEnum{} }
-func (m *AnotherNidOptEnum) String() string { return proto.CompactTextString(m) }
-func (*AnotherNidOptEnum) ProtoMessage()    {}
-
 type AnotherNinOptEnum struct {
 	Field1           *AnotherTestEnum `protobuf:"varint,1,opt,enum=gogoprototest.AnotherTestEnum" json:"Field1,omitempty"`
 	XXX_unrecognized []byte           `json:"-"`
@@ -187,17 +167,6 @@ func (m *AnotherNinOptEnum) GetField1() AnotherTestEnum {
 	}
 	return D
 }
-
-type AnotherNidOptEnumDefault struct {
-	Field1           AnotherTestEnum `protobuf:"varint,1,opt,enum=gogoprototest.AnotherTestEnum,def=11" json:"Field1"`
-	XXX_unrecognized []byte          `json:"-"`
-}
-
-func (m *AnotherNidOptEnumDefault) Reset()         { *m = AnotherNidOptEnumDefault{} }
-func (m *AnotherNidOptEnumDefault) String() string { return proto.CompactTextString(m) }
-func (*AnotherNidOptEnumDefault) ProtoMessage()    {}
-
-const Default_AnotherNidOptEnumDefault_Field1 AnotherTestEnum = E
 
 type AnotherNinOptEnumDefault struct {
 	Field1           *AnotherTestEnum `protobuf:"varint,1,opt,enum=gogoprototest.AnotherTestEnum,def=11" json:"Field1,omitempty"`

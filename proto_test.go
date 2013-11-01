@@ -2609,55 +2609,6 @@ func TestProtoVimNinGoGoToGoRepUint128AsBytes(t *testing.T) {
 
 //Optional Another Enum
 //Values are available
-//Nullable is false
-//Go -> Go
-func TestProtoVisAnotherNidGoOptEnum(t *testing.T) {
-	testProtoGo{
-		msg:    govisAnotherNidOptEnum,
-		newMsg: newGoProtoAnotherNidOptEnum,
-	}.test(t)
-}
-
-//Optional Another Enum
-//Values are available
-//Nullable is false
-//GoGo -> GoGo
-func TestProtoVisAnotherNidGoGoOptEnum(t *testing.T) {
-	testProtoGoGo{
-		msg:    gogovisAnotherNidOptEnum,
-		newMsg: newGoGoProtoAnotherNidOptEnum,
-	}.test(t)
-}
-
-//Optional Another Enum
-//Values are available
-//Nullable is false
-//Go -> GoGo
-func TestProtoVisAnotherNidGoToGoGoOptEnum(t *testing.T) {
-	testProtoGoToGoGo{
-		gomsg:      govisAnotherNidOptEnum,
-		newGogomsg: newGoGoProtoAnotherNidOptEnum,
-		gogomsg:    gogovisAnotherNidOptEnum,
-	}.test(t)
-}
-
-//Optional Another Enum
-//Values are available
-//Nullable is false
-//GoGo -> Go
-func TestProtoVisAnotherNidGoGoToGoOptEnum(t *testing.T) {
-	testProtoGoGoToGo{
-		gogomsg:  gogovisAnotherNidOptEnum,
-		newGomsg: newGoProtoAnotherNidOptEnum,
-		gomsg:    govisAnotherNidOptEnum,
-		vis:      true,
-	}.test(t)
-}
-
-//
-
-//Optional Another Enum
-//Values are available
 //Nullable is true
 //Go -> Go
 func TestProtoVisAnotherNinGoOptEnum(t *testing.T) {
@@ -2749,55 +2700,6 @@ func TestProtoVimAnotherNinGoGoToGoOptEnum(t *testing.T) {
 		newGomsg: newGoProtoAnotherNinOptEnum,
 		gomsg:    govimAnotherNinOptEnum,
 		vis:      false,
-	}.test(t)
-}
-
-//
-
-//Optional Enum Default
-//Values are available
-//Nullable is false
-//Go -> Go
-func TestProtoVisNidGoOptEnumDefault(t *testing.T) {
-	testProtoGo{
-		msg:    govisNidOptEnumDefault,
-		newMsg: newGoProtoNidOptEnumDefault,
-	}.test(t)
-}
-
-//Optional Enum Default
-//Values are available
-//Nullable is false
-//GoGo -> GoGo
-func TestProtoVisNidGoGoOptEnumDefault(t *testing.T) {
-	testProtoGoGo{
-		msg:    gogovisNidOptEnumDefault,
-		newMsg: newGoGoProtoNidOptEnumDefault,
-	}.test(t)
-}
-
-//Optional Enum Default
-//Values are available
-//Nullable is false
-//Go -> GoGo
-func TestProtoVisNidGoToGoGoOptEnumDefault(t *testing.T) {
-	testProtoGoToGoGo{
-		gomsg:      govisNidOptEnumDefault,
-		newGogomsg: newGoGoProtoNidOptEnumDefault,
-		gogomsg:    gogovisNidOptEnumDefault,
-	}.test(t)
-}
-
-//Optional Enum Default
-//Values are available
-//Nullable is false
-//GoGo -> Go
-func TestProtoVisNidGoGoToGoOptEnumDefault(t *testing.T) {
-	testProtoGoGoToGo{
-		gogomsg:  gogovisNidOptEnumDefault,
-		newGomsg: newGoProtoNidOptEnumDefault,
-		gomsg:    govisNidOptEnumDefault,
-		vis:      true,
 	}.test(t)
 }
 
@@ -2903,55 +2805,6 @@ func TestProtoVimNinGoGoToGoOptEnumDefault(t *testing.T) {
 
 //Optional Another Enum Default
 //Values are available
-//Nullable is false
-//Go -> Go
-func TestProtoVisAnotherNidGoOptEnumDefault(t *testing.T) {
-	testProtoGo{
-		msg:    govisAnotherNidOptEnumDefault,
-		newMsg: newGoProtoAnotherNidOptEnumDefault,
-	}.test(t)
-}
-
-//Optional Another Enum Default
-//Values are available
-//Nullable is false
-//GoGo -> GoGo
-func TestProtoVisAnotherNidGoGoOptEnumDefault(t *testing.T) {
-	testProtoGoGo{
-		msg:    gogovisAnotherNidOptEnumDefault,
-		newMsg: newGoGoProtoAnotherNidOptEnumDefault,
-	}.test(t)
-}
-
-//Optional Another Enum Default
-//Values are available
-//Nullable is false
-//Go -> GoGo
-func TestProtoVisAnotherNidGoToGoGoOptEnumDefault(t *testing.T) {
-	testProtoGoToGoGo{
-		gomsg:      govisAnotherNidOptEnumDefault,
-		newGogomsg: newGoGoProtoAnotherNidOptEnumDefault,
-		gogomsg:    gogovisAnotherNidOptEnumDefault,
-	}.test(t)
-}
-
-//Optional Another Enum Default
-//Values are available
-//Nullable is false
-//GoGo -> Go
-func TestProtoVisAnotherNidGoGoToGoOptEnumDefault(t *testing.T) {
-	testProtoGoGoToGo{
-		gogomsg:  gogovisAnotherNidOptEnumDefault,
-		newGomsg: newGoProtoAnotherNidOptEnumDefault,
-		gomsg:    govisAnotherNidOptEnumDefault,
-		vis:      true,
-	}.test(t)
-}
-
-//
-
-//Optional Another Enum Default
-//Values are available
 //Nullable is true
 //Go -> Go
 func TestProtoVisAnotherNinGoOptEnumDefault(t *testing.T) {
@@ -3043,55 +2896,6 @@ func TestProtoVimAnotherNinGoGoToGoOptEnumDefault(t *testing.T) {
 		newGomsg: newGoProtoAnotherNinOptEnumDefault,
 		gomsg:    govimAnotherNinOptEnumDefault,
 		vis:      false,
-	}.test(t)
-}
-
-//
-
-//Optional Native
-//Values are available
-//Nullable is false
-//Go -> Go
-func TestProtoVisNidGoOptNativeDefault(t *testing.T) {
-	testProtoGo{
-		msg:    govisNidOptNativeDefault,
-		newMsg: newGoProtoNidOptNativeDefault,
-	}.test(t)
-}
-
-//Optional Native
-//Values are available
-//Nullable is false
-//GoGo -> GoGo
-func TestProtoVisNidGoGoOptNativeDefault(t *testing.T) {
-	testProtoGoGo{
-		msg:    gogovisNidOptNativeDefault,
-		newMsg: newGoGoProtoNidOptNativeDefault,
-	}.test(t)
-}
-
-//Optional Native
-//Values are available
-//Nullable is false
-//Go -> GoGo
-func TestProtoVisNidGoToGoGoOptNativeDefault(t *testing.T) {
-	testProtoGoToGoGo{
-		gomsg:      govisNidOptNativeDefault,
-		newGogomsg: newGoGoProtoNidOptNativeDefault,
-		gogomsg:    gogovisNidOptNativeDefault,
-	}.test(t)
-}
-
-//Optional Native
-//Values are available
-//Nullable is false
-//GoGo -> Go
-func TestProtoVisNidGoGoToGoOptNativeDefault(t *testing.T) {
-	testProtoGoGoToGo{
-		gogomsg:  gogovisNidOptNativeDefault,
-		newGomsg: newGoProtoNidOptNativeDefault,
-		gomsg:    govisNidOptNativeDefault,
-		vis:      true,
 	}.test(t)
 }
 

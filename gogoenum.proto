@@ -51,10 +51,6 @@ message NinRepEnum {
 	repeated TheTestEnum Field1 = 1;
 }
 
-message NidOptEnumDefault {
-	optional TheTestEnum Field1 = 1 [default=C, (gogoproto.nullable) = false];
-}
-
 message NinOptEnumDefault {
 	optional TheTestEnum Field1 = 1  [default=C];
 }
@@ -65,16 +61,8 @@ enum AnotherTestEnum {
     E = 11;
 }
 
-message AnotherNidOptEnum {
-	optional AnotherTestEnum Field1 = 1 [(gogoproto.nullable) = false];
-}
-
 message AnotherNinOptEnum {
 	optional AnotherTestEnum Field1 = 1;
-}
-
-message AnotherNidOptEnumDefault {
-	optional AnotherTestEnum Field1 = 1 [default=E, (gogoproto.nullable) = false];
 }
 
 message AnotherNinOptEnumDefault {

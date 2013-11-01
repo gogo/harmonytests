@@ -148,24 +148,6 @@ func (m *NinRepEnum) GetField1() []TheTestEnum {
 	return nil
 }
 
-type NidOptEnumDefault struct {
-	Field1           *TheTestEnum `protobuf:"varint,1,opt,enum=gogoprototest.TheTestEnum,def=2" json:"Field1,omitempty"`
-	XXX_unrecognized []byte       `json:"-"`
-}
-
-func (m *NidOptEnumDefault) Reset()         { *m = NidOptEnumDefault{} }
-func (m *NidOptEnumDefault) String() string { return proto.CompactTextString(m) }
-func (*NidOptEnumDefault) ProtoMessage()    {}
-
-const Default_NidOptEnumDefault_Field1 TheTestEnum = TheTestEnum_C
-
-func (m *NidOptEnumDefault) GetField1() TheTestEnum {
-	if m != nil && m.Field1 != nil {
-		return *m.Field1
-	}
-	return Default_NidOptEnumDefault_Field1
-}
-
 type NinOptEnumDefault struct {
 	Field1           *TheTestEnum `protobuf:"varint,1,opt,enum=gogoprototest.TheTestEnum,def=2" json:"Field1,omitempty"`
 	XXX_unrecognized []byte       `json:"-"`
@@ -184,22 +166,6 @@ func (m *NinOptEnumDefault) GetField1() TheTestEnum {
 	return Default_NinOptEnumDefault_Field1
 }
 
-type AnotherNidOptEnum struct {
-	Field1           *AnotherTestEnum `protobuf:"varint,1,opt,enum=gogoprototest.AnotherTestEnum" json:"Field1,omitempty"`
-	XXX_unrecognized []byte           `json:"-"`
-}
-
-func (m *AnotherNidOptEnum) Reset()         { *m = AnotherNidOptEnum{} }
-func (m *AnotherNidOptEnum) String() string { return proto.CompactTextString(m) }
-func (*AnotherNidOptEnum) ProtoMessage()    {}
-
-func (m *AnotherNidOptEnum) GetField1() AnotherTestEnum {
-	if m != nil && m.Field1 != nil {
-		return *m.Field1
-	}
-	return AnotherTestEnum_D
-}
-
 type AnotherNinOptEnum struct {
 	Field1           *AnotherTestEnum `protobuf:"varint,1,opt,enum=gogoprototest.AnotherTestEnum" json:"Field1,omitempty"`
 	XXX_unrecognized []byte           `json:"-"`
@@ -214,24 +180,6 @@ func (m *AnotherNinOptEnum) GetField1() AnotherTestEnum {
 		return *m.Field1
 	}
 	return AnotherTestEnum_D
-}
-
-type AnotherNidOptEnumDefault struct {
-	Field1           *AnotherTestEnum `protobuf:"varint,1,opt,enum=gogoprototest.AnotherTestEnum,def=11" json:"Field1,omitempty"`
-	XXX_unrecognized []byte           `json:"-"`
-}
-
-func (m *AnotherNidOptEnumDefault) Reset()         { *m = AnotherNidOptEnumDefault{} }
-func (m *AnotherNidOptEnumDefault) String() string { return proto.CompactTextString(m) }
-func (*AnotherNidOptEnumDefault) ProtoMessage()    {}
-
-const Default_AnotherNidOptEnumDefault_Field1 AnotherTestEnum = AnotherTestEnum_E
-
-func (m *AnotherNidOptEnumDefault) GetField1() AnotherTestEnum {
-	if m != nil && m.Field1 != nil {
-		return *m.Field1
-	}
-	return Default_AnotherNidOptEnumDefault_Field1
 }
 
 type AnotherNinOptEnumDefault struct {
