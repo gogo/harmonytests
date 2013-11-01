@@ -347,6 +347,111 @@ const Default_NinOptNativeDefault_Field12 int64 = 1234
 const Default_NinOptNativeDefault_Field13 bool = true
 const Default_NinOptNativeDefault_Field14 string = "1234"
 
+func (m *NinOptNativeDefault) GetField1() float64 {
+	if m != nil && m.Field1 != nil {
+		return *m.Field1
+	}
+	return Default_NinOptNativeDefault_Field1
+}
+
+func (m *NinOptNativeDefault) GetField2() float32 {
+	if m != nil && m.Field2 != nil {
+		return *m.Field2
+	}
+	return Default_NinOptNativeDefault_Field2
+}
+
+func (m *NinOptNativeDefault) GetField3() int32 {
+	if m != nil && m.Field3 != nil {
+		return *m.Field3
+	}
+	return Default_NinOptNativeDefault_Field3
+}
+
+func (m *NinOptNativeDefault) GetField4() int64 {
+	if m != nil && m.Field4 != nil {
+		return *m.Field4
+	}
+	return Default_NinOptNativeDefault_Field4
+}
+
+func (m *NinOptNativeDefault) GetField5() uint32 {
+	if m != nil && m.Field5 != nil {
+		return *m.Field5
+	}
+	return Default_NinOptNativeDefault_Field5
+}
+
+func (m *NinOptNativeDefault) GetField6() uint64 {
+	if m != nil && m.Field6 != nil {
+		return *m.Field6
+	}
+	return Default_NinOptNativeDefault_Field6
+}
+
+func (m *NinOptNativeDefault) GetField7() int32 {
+	if m != nil && m.Field7 != nil {
+		return *m.Field7
+	}
+	return Default_NinOptNativeDefault_Field7
+}
+
+func (m *NinOptNativeDefault) GetField8() int64 {
+	if m != nil && m.Field8 != nil {
+		return *m.Field8
+	}
+	return Default_NinOptNativeDefault_Field8
+}
+
+func (m *NinOptNativeDefault) GetField9() uint32 {
+	if m != nil && m.Field9 != nil {
+		return *m.Field9
+	}
+	return Default_NinOptNativeDefault_Field9
+}
+
+func (m *NinOptNativeDefault) GetField10() int32 {
+	if m != nil && m.Field10 != nil {
+		return *m.Field10
+	}
+	return Default_NinOptNativeDefault_Field10
+}
+
+func (m *NinOptNativeDefault) GetField11() uint64 {
+	if m != nil && m.Field11 != nil {
+		return *m.Field11
+	}
+	return Default_NinOptNativeDefault_Field11
+}
+
+func (m *NinOptNativeDefault) GetField12() int64 {
+	if m != nil && m.Field12 != nil {
+		return *m.Field12
+	}
+	return Default_NinOptNativeDefault_Field12
+}
+
+func (m *NinOptNativeDefault) GetField13() bool {
+	if m != nil && m.Field13 != nil {
+		return *m.Field13
+	}
+	return Default_NinOptNativeDefault_Field13
+}
+
+func (m *NinOptNativeDefault) GetField14() string {
+	if m != nil && m.Field14 != nil {
+		return *m.Field14
+	}
+	return Default_NinOptNativeDefault_Field14
+}
+
+func (m *NinOptNativeDefault) GetField15() []byte {
+	if m != nil {
+		return m.Field15
+	}
+	return nil
+}
+
 func init() {
 }
 func (this *SimpleMessage) String() string {

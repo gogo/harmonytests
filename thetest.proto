@@ -237,6 +237,7 @@ message NinRepUint128AsBytes {
 }
 
 message NinOptNativeDefault {
+	option (gogoproto.goproto_getters) = true;
 	optional double Field1 = 1 [default = 1234.1234];
 	optional float Field2 = 2 [default = 1234.1234];
 	optional int32 Field3 = 3 [default = 1234];
