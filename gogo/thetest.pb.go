@@ -2,6 +2,38 @@
 // source: thetest.proto
 // DO NOT EDIT!
 
+/*
+Package gogoprototest is a generated protocol buffer package.
+
+It is generated from these files:
+	thetest.proto
+
+It has these top-level messages:
+	SimpleMessage
+	NidOptNative
+	NinOptNative
+	NidRepNative
+	NinRepNative
+	NidRepPackedNative
+	NinRepPackedNative
+	NidOptStruct
+	NinOptStruct
+	NidRepStruct
+	NinRepStruct
+	NidEmbeddedStruct
+	NinEmbeddedStruct
+	NidNestedStruct
+	NinNestedStruct
+	NidOptUuidAsBytes
+	NinOptUuidAsBytes
+	NidRepUuidAsBytes
+	NinRepUuidAsBytes
+	NidOptUint128AsBytes
+	NinOptUint128AsBytes
+	NidRepUint128AsBytes
+	NinRepUint128AsBytes
+	NinOptNativeDefault
+*/
 package gogoprototest
 
 import proto "code.google.com/p/gogoprotobuf/proto"

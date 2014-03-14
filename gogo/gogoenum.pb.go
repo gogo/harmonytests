@@ -2,6 +2,21 @@
 // source: gogoenum.proto
 // DO NOT EDIT!
 
+/*
+Package gogoprototest is a generated protocol buffer package.
+
+It is generated from these files:
+	gogoenum.proto
+
+It has these top-level messages:
+	NidOptEnum
+	NinOptEnum
+	NidRepEnum
+	NinRepEnum
+	NinOptEnumDefault
+	AnotherNinOptEnum
+	AnotherNinOptEnumDefault
+*/
 package gogoprototest
 
 import proto "code.google.com/p/gogoprotobuf/proto"
@@ -93,6 +108,13 @@ func (m *NidOptEnum) Reset()         { *m = NidOptEnum{} }
 func (m *NidOptEnum) String() string { return proto.CompactTextString(m) }
 func (*NidOptEnum) ProtoMessage()    {}
 
+func (m *NidOptEnum) GetField1() TheTestEnum {
+	if m != nil {
+		return m.Field1
+	}
+	return A
+}
+
 type NinOptEnum struct {
 	Field1           *TheTestEnum `protobuf:"varint,1,opt,enum=gogoprototest.TheTestEnum" json:"Field1,omitempty"`
 	XXX_unrecognized []byte       `json:"-"`
@@ -117,6 +139,13 @@ type NidRepEnum struct {
 func (m *NidRepEnum) Reset()         { *m = NidRepEnum{} }
 func (m *NidRepEnum) String() string { return proto.CompactTextString(m) }
 func (*NidRepEnum) ProtoMessage()    {}
+
+func (m *NidRepEnum) GetField1() []TheTestEnum {
+	if m != nil {
+		return m.Field1
+	}
+	return nil
+}
 
 type NinRepEnum struct {
 	Field1           []TheTestEnum `protobuf:"varint,1,rep,enum=gogoprototest.TheTestEnum" json:"Field1,omitempty"`
