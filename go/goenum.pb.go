@@ -2,6 +2,21 @@
 // source: goenum.proto
 // DO NOT EDIT!
 
+/*
+Package gogoprototest is a generated protocol buffer package.
+
+It is generated from these files:
+	goenum.proto
+
+It has these top-level messages:
+	NidOptEnum
+	NinOptEnum
+	NidRepEnum
+	NinRepEnum
+	NinOptEnumDefault
+	AnotherNinOptEnum
+	AnotherNinOptEnumDefault
+*/
 package gogoprototest
 
 import proto "code.google.com/p/goprotobuf/proto"
