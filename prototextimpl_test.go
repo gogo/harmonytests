@@ -28,8 +28,8 @@ package gogoprototest
 
 import (
 	gogoproto "code.google.com/p/gogoprotobuf/proto"
-	goproto "code.google.com/p/goprotobuf/proto"
 	"fmt"
+	goproto "github.com/golang/protobuf/proto"
 	"io/ioutil"
 	"path"
 	"reflect"
