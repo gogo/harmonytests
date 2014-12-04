@@ -27,12 +27,12 @@ package gogoprototest
 
 import (
 	"bytes"
-	gogoproto "code.google.com/p/gogoprotobuf/proto"
-	"code.google.com/p/gogoprotobuf/test"
-	"code.google.com/p/gogoprotobuf/test/custom"
 	"fmt"
 	gotest "github.com/gogo/harmonytests/go"
 	gogotest "github.com/gogo/harmonytests/gogo"
+	gogoproto "github.com/gogo/protobuf/proto"
+	"github.com/gogo/protobuf/test"
+	"github.com/gogo/protobuf/test/custom"
 	goproto "github.com/golang/protobuf/proto"
 	"math"
 	"reflect"
@@ -126,7 +126,7 @@ var gogosimplemsg = &gogotest.SimpleMessage{
 
 var (
 	field1  float64 = math.MaxFloat64
-	field2  float32 = math.MaxFloat32 //This should be MaxFloat32 when http://code.google.com/p/go/issues/detail?id=4282 is fixed
+	field2  float32 = math.MaxFloat32
 	field3  int32   = math.MaxInt32
 	field4  int64   = math.MinInt64
 	field5  uint32  = math.MaxUint32
@@ -369,7 +369,7 @@ var (
 
 var (
 	fields1  = []float64{math.MaxFloat64}
-	fields2  = []float32{math.MaxFloat32} //This should be MaxFloat32 when http://code.google.com/p/go/issues/detail?id=4282 is fixed
+	fields2  = []float32{math.MaxFloat32}
 	fields3  = []int32{math.MaxInt32}
 	fields4  = []int64{math.MinInt64}
 	fields5  = []uint32{math.MaxUint32}

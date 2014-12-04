@@ -22,7 +22,7 @@ package gogoprototest
 import proto "github.com/golang/protobuf/proto"
 import math "math"
 
-// discarding unused import gogoproto "code.google.com/p/gogoprotobuf/gogoproto/gogo.pb"
+// discarding unused import gogoproto "github.com/gogo/protobuf/gogoproto/gogo.pb"
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal

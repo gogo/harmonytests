@@ -25,7 +25,7 @@
 
 package gogoprototest;
 
-import "code.google.com/p/gogoprotobuf/gogoproto/gogo.proto";
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
 
 //shorthand
 //nid = nil is default (nullable = false)
@@ -40,7 +40,7 @@ option (gogoproto.stringer_all) = true;
 option (gogoproto.goproto_getters_all) = false;
 
 message SimpleMessage {
-	optional bytes Id = 1 [(gogoproto.customtype) = "code.google.com/p/gogoprotobuf/test.Uuid", (gogoproto.nullable) = false];
+	optional bytes Id = 1 [(gogoproto.customtype) = "github.com/gogo/protobuf/test.Uuid", (gogoproto.nullable) = false];
 	optional string SimpleName = 2 [(gogoproto.nullable) = false];
 	optional int64 Time = 3;
 }
@@ -204,35 +204,35 @@ message NinNestedStruct {
 }
 
 message NidOptUuidAsBytes {
-	optional bytes Id = 1 [(gogoproto.customtype) = "code.google.com/p/gogoprotobuf/test.Uuid", (gogoproto.nullable) = false];
+	optional bytes Id = 1 [(gogoproto.customtype) = "github.com/gogo/protobuf/test.Uuid", (gogoproto.nullable) = false];
 }
 
 message NinOptUuidAsBytes {
-	optional bytes Id = 1 [(gogoproto.customtype) = "code.google.com/p/gogoprotobuf/test.Uuid"];
+	optional bytes Id = 1 [(gogoproto.customtype) = "github.com/gogo/protobuf/test.Uuid"];
 }
 
 message NidRepUuidAsBytes {
-	repeated bytes Id = 1 [(gogoproto.customtype) = "code.google.com/p/gogoprotobuf/test.Uuid", (gogoproto.nullable) = false];
+	repeated bytes Id = 1 [(gogoproto.customtype) = "github.com/gogo/protobuf/test.Uuid", (gogoproto.nullable) = false];
 }
 
 message NinRepUuidAsBytes {
-	repeated bytes Id = 1 [(gogoproto.customtype) = "code.google.com/p/gogoprotobuf/test.Uuid"];
+	repeated bytes Id = 1 [(gogoproto.customtype) = "github.com/gogo/protobuf/test.Uuid"];
 }
 
 message NidOptUint128AsBytes {
-	optional bytes Value = 1 [(gogoproto.customtype) = "code.google.com/p/gogoprotobuf/test/custom.Uint128", (gogoproto.nullable) = false];
+	optional bytes Value = 1 [(gogoproto.customtype) = "github.com/gogo/protobuf/test/custom.Uint128", (gogoproto.nullable) = false];
 }
 
 message NinOptUint128AsBytes {
-	optional bytes Value = 1 [(gogoproto.customtype) = "code.google.com/p/gogoprotobuf/test/custom.Uint128"];
+	optional bytes Value = 1 [(gogoproto.customtype) = "github.com/gogo/protobuf/test/custom.Uint128"];
 }
 
 message NidRepUint128AsBytes {
-	repeated bytes Value = 1 [(gogoproto.customtype) = "code.google.com/p/gogoprotobuf/test/custom.Uint128", (gogoproto.nullable) = false];
+	repeated bytes Value = 1 [(gogoproto.customtype) = "github.com/gogo/protobuf/test/custom.Uint128", (gogoproto.nullable) = false];
 }
 
 message NinRepUint128AsBytes {
-	repeated bytes Value = 1 [(gogoproto.customtype) = "code.google.com/p/gogoprotobuf/test/custom.Uint128"];
+	repeated bytes Value = 1 [(gogoproto.customtype) = "github.com/gogo/protobuf/test/custom.Uint128"];
 }
 
 message NinOptNativeDefault {

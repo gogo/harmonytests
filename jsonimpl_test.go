@@ -26,9 +26,9 @@
 package gogoprototest
 
 import (
-	gogoproto "code.google.com/p/gogoprotobuf/proto"
 	"encoding/json"
 	"fmt"
+	gogoproto "github.com/gogo/protobuf/proto"
 	goproto "github.com/golang/protobuf/proto"
 	"io/ioutil"
 	"path"

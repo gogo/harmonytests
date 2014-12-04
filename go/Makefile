@@ -24,5 +24,5 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 regenerate:
-	(protoc --proto_path=../:../../../../:../../../../code.google.com/p/gogoprotobuf/protobuf/:. --go_out=. ../thetest.proto)
-	(protoc --proto_path=../:../../../../:../../../../code.google.com/p/gogoprotobuf/protobuf/:. --go_out=. ../goenum.proto)
+	(protoc --proto_path=../:../../../../:../../../../github.com/gogo/protobuf/protobuf/:. --go_out=. ../thetest.proto)
+	(protoc --proto_path=../:../../../../:../../../../github.com/gogo/protobuf/protobuf/:. --go_out=. ../goenum.proto)
