@@ -39,14 +39,3 @@ clean:
 nuke:
 	go clean -i ./...
 
-drone:
-	sudo apt-get install protobuf-compiler
-	go get github.com/golang/protobuf/proto
-	go get github.com/golang/protobuf/protoc-gen-go
-	go get github.com/gogo/protobuf/proto
-	go get github.com/gogo/protobuf/protoc-gen-gogo
-	go get github.com/gogo/protobuf/gogoproto
-	make nuke
-	make regenerate
-	make gofmt
-	make test
